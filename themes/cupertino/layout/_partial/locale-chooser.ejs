@@ -1,0 +1,12 @@
+<div class="locale-chooser">
+  <p class="locale-chooser__lead"><%= __('choose_language_lead') %></p>
+
+  <nav class="locale-chooser__grid" aria-label="<%= __('choose_language_title') %>">
+    <% locale_list().forEach((locale) => { %>
+    <a class="locale-chooser__card" href="<%- url_for(locale.homePath) %>" data-locale-preference="<%- locale.key %>">
+      <span class="locale-chooser__card-title"><%- locale.display_name %></span>
+      <span class="locale-chooser__card-copy"><%- locale.home_description %></span>
+    </a>
+    <% }) %>
+  </nav>
+</div>

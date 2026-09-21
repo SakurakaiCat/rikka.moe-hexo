@@ -1,0 +1,35 @@
+---
+title: The Boundaries of Cognition
+date: "2026-06-17 23:00:00"
+description: "These questions all touch upon the boundaries of our cognition — whether the boundaries of words, of language, or those beyond our field of vision."
+keywords: "Wayne Booth, The Rhetoric of Fiction, unreliable narrator, curiosity, boundaries of cognition, reading"
+permalink: /en/2026/06/17/the-boundaries-of-cognition/
+categories: [长文]
+tags: [随笔]
+lang: en
+translation_key: boundary-of-cognition
+---
+
+<div class="ai-summary">
+Starting from a chance encounter with Wayne Booth's *The Rhetoric of Fiction*, the author is struck by the concept of the unreliable narrator — **the writer who first thought of making the narrator lie was an absolute genius: he knew that from the first page, readers hand themselves over to that voice that says "I."** But the essay's real weight lies not in literary theory, but in self-examination: *why does curiosity always aim precisely in the wrong direction? Why does the dark field outside the window at night evoke both fascination and detachment? Why might these questions — the ones you can never ask anyone — not belong to the category of "sick," but instead touch the boundaries of cognition.* Booth drew a line in literature — the reader stands with one foot in the story and one foot dangling. That unease, that's the fascination. It ends with a high school daydream: sunlight on the textbook, the teacher lecturing on Lu Xun, and the thought — *what if the whole textbook were written by an unreliable narrator.* That unlocked door may be where everything began.
+</div>
+
+I was idling recently and stumbled upon Wayne Booth's *The Rhetoric of Fiction*. This book has absolutely nothing to do with my field of study, and reading it won't make me a dime. But for some reason, I picked it up anyway.
+
+When I got to the section on the narrator, I paused. Booth's book was the first to formally introduce the concept of the "unreliable narrator" — the idea that the person telling the story in a novel doesn't necessarily speak for the author. The first time I read this, I thought, the writer who first came up with this was an absolute genius. Not the kind of smarts that calculates something in a lab — a more covert kind of gift. He knew readers are credulous. He knew that from the moment you turn to the first page, you have already, by default, handed yourself over to that voice that says "I." So he exploited that. He made that voice lie. Halfway through, or at the end, you realize you've been kept in the dark the whole time. The feeling of betrayal surges up, but you can't be angry, because from start to finish no one ever promised that voice was telling the truth. You were the one who believed it.
+
+This reminds me of middle school Chinese class. The teacher was lecturing on Lu Xun's *New Year Sacrifice*, and mentioned that Xianglin's Wife is an "unreliable narrator" — but this wasn't going to be on the exam. Things not on the exam, the teacher covered very quickly. I sat by the window, daydreaming, thinking: what if the entire Chinese textbook were written by an unreliable narrator.
+
+I've actually tried using various rhetorical devices in my own writing. Writing memoirs, or stories — I can't really tell the difference. The results never seem very good. Sometimes I look back after writing and feel like I'm explaining too much. Explaining why I think this way, explaining what the metaphor of that scene means, explaining — afraid the reader won't get it. A good narrator doesn't need to explain. He just says it, in an even tone, with precise details. Let the reader do the unease on their own. I can't manage that. Probably because I'm not entirely sure who that narrator is either.
+
+I do really like asking why. But not about everything — my curiosity seems to have a strange navigation system, each time precisely steering toward the wrong destination. Like, when everyone else is scrolling through short videos, I'm thinking: why do I feel both detached and fascinated by the dark field outside the window at night. Not afraid — fascinated. That feeling of standing in front of the window, the darkness outside like a mirror you can never quite wipe clean, and what you see isn't the field or the trees but your own face floating on the glass, two eyes as indistinct black holes. Does this kind of fascination have a name. Why does the unreliable narrator evoke a particular kind of shock in readers, and is that shock the same thing as the shock of being lied to in person — and if it is, why does one make you angry while the other makes you marvel. Why, when I look at the paper effigy on a funeral wreath, do I not want to cry, and yet feel no guilt about it either.
+
+All questions you can't ask anyone. It would be weird to ask. People would probably glance at me and say, you think too much. Or more directly: are you sick.
+
+Maybe. But Booth's book made me feel like maybe it's not that I'm sick. Maybe these questions belong to a field that's been long neglected — the boundaries of cognition. Words have boundaries, language has boundaries, but it doesn't stop there. At the limits of our field of vision, that blurry horizon — what's beyond it, we don't know, but we know that we don't know. This state of "knowing that you don't know" is the source of fascination, and also the source of fear. Booth's unreliable narrator draws a line within literature: on this side of the line is the truth you thought you had; on the other side is the real truth. The reader stands on the line, one foot inside the story, one foot dangling. That unease — that is the goddamn fascination.
+
+Put this way, those people scrolling through short videos might never have to face this unease. Don't have to think about why the dark field is eerie. Don't have to think about the difference between the paper effigy's smile and the smiles of the people around them. They just need to swipe. Swipe again. The screen will never go empty, the darkness will never be stared at. Sometimes I envy them. But only sometimes.
+
+If I could find out the answers — even just partial ones — putting aside utilitarianism to read a few more "useless" books wouldn't be so bad. It's not like I'm making money anyway. It's not like I'm striving for anything.
+
+I think again of myself sitting in that high school classroom, daydreaming. Sunlight streaming in through the left window, spilling a warm patch of yellow across the textbook on the desk. The teacher lecturing on Lu Xun, her voice like the traffic on a distant highway — steady, remote. I was thinking — what if the textbook were written by an unreliable narrator. That thought kept me excited for a long time. Not because I had discovered some truth, but because I had discovered a door. The door had no lock. A gentle push and it opened. Outside the door was a field. The sky was getting dark. You knew that walking in, you might not come back — but you also knew that if you didn't walk in, you'd be standing in front of this door forever. This knowing — this might be the beginning of everything.

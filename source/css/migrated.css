@@ -1,0 +1,555 @@
+/* Migration styles for content imported from rikka.moe (Astro) */
+
+/* AI summary callout at the top of migrated posts */
+.ai-summary {
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--background, #f5f5f7) 70%, #a1a1aa 30%);
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  font-size: 0.95em;
+  line-height: 1.75;
+}
+
+.ai-summary::before {
+  content: "✦ AI 摘要";
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.9em;
+  opacity: 0.75;
+}
+
+/* Locale chooser page (/languages/) */
+.locale-chooser {
+  margin: 1rem 0 3rem;
+}
+
+.locale-chooser__lead {
+  font-size: 1.05em;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.locale-chooser__languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.akari-hero-language {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.locale-chooser__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.locale-chooser__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.locale-chooser__card:hover {
+  transform: translateY(-2px);
+}
+
+.locale-chooser__card-title {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.locale-chooser__card-copy {
+  opacity: 0.7;
+  font-size: 0.92em;
+  line-height: 1.6;
+}
+
+/* Homepage "自我介绍" section, ported from the previous Astro site */
+.akari-personal-intro {
+  max-width: 980px;
+  margin: 0 auto 40px;
+  padding: 28px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-large);
+  background: var(--color-background-secondary);
+}
+
+.akari-personal-intro__header small {
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.akari-personal-intro__header h2 {
+  margin: 0.25rem 0 0;
+}
+
+.akari-personal-intro__memoir-note {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-tertiary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.akari-profile-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.akari-profile-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-medium);
+  background: var(--color-background-primary);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.akari-profile-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-background-accent);
+}
+
+.akari-profile-card > i {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 1.35rem;
+  color: var(--color-text-accent);
+}
+
+.akari-profile-card small {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-text-tertiary);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.akari-profile-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.akari-personal-intro__figure-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.akari-personal-intro__figure {
+  margin: 0;
+}
+
+.akari-personal-intro__figure img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-medium);
+}
+
+.akari-personal-intro__figure figcaption {
+  margin-top: 10px;
+  color: var(--color-text-tertiary);
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.akari-personal-intro__memoir {
+  min-width: 0;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-medium);
+  background: var(--color-background-primary);
+}
+
+.akari-personal-intro__memoir summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.akari-personal-intro__memoir summary::-webkit-details-marker {
+  display: none;
+}
+
+.akari-personal-intro__memoir-toggle {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.akari-personal-intro__memoir-open,
+.akari-personal-intro__memoir-close {
+  display: none;
+}
+
+.akari-personal-intro__memoir:not([open]) .akari-personal-intro__memoir-open,
+.akari-personal-intro__memoir[open] .akari-personal-intro__memoir-close {
+  display: inline;
+}
+
+.akari-personal-intro__memoir summary i {
+  color: var(--color-text-tertiary);
+  transition: transform 0.22s ease;
+}
+
+.akari-personal-intro__memoir[open] summary i {
+  transform: rotate(180deg);
+}
+
+.akari-personal-intro__memoir .akari-personal-intro__body {
+  padding: 4px 20px 20px;
+  border-top: 1px dashed var(--color-border-primary);
+}
+
+.akari-personal-intro__body {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.akari-personal-intro__body p {
+  margin: 0 0 1em;
+}
+
+.akari-personal-intro__body p:last-child {
+  margin-bottom: 0;
+}
+
+.akari-personal-intro__memoir .akari-personal-intro__tags {
+  margin-top: 18px;
+}
+
+.akari-personal-intro__tags h3 {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.akari-personal-intro__tags ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.akari-personal-intro__tags li {
+  padding: 6px 14px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-full);
+  background: var(--color-background-primary);
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 720px) {
+  .akari-personal-intro {
+    padding: 20px;
+  }
+
+  .akari-personal-intro__figure-row {
+    grid-template-columns: 1fr;
+  }
+
+  .akari-personal-intro__figure img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* NASA APOD background layer (source/js/nasa-background.js) */
+
+.akari-nasa-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  filter: saturate(120%);
+  pointer-events: none;
+  transition: opacity 1.8s ease;
+}
+
+body.akari-nasa-loaded .akari-nasa-bg {
+  opacity: 0.22;
+}
+
+body[data-color-scheme='dark'].akari-nasa-loaded .akari-nasa-bg {
+  opacity: 0.34;
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-color-scheme='auto'].akari-nasa-loaded .akari-nasa-bg {
+    opacity: 0.34;
+  }
+}
+
+/* Visitor counters in the footer (source/js/analytics.js fills them) */
+
+.visit-counter {
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: 0.82rem;
+}
+
+.visit-counter span {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Twikoo comment section */
+
+.post-comments {
+  margin-top: 32px;
+}
+
+.post-comments h2 {
+  margin-bottom: 16px;
+}
+
+/* Per-post view / comment counters (source/js/post-stats.js) */
+.post-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  color: var(--color-text-tertiary);
+  font-size: 0.86rem;
+}
+
+.post-stats__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Edition homepage hero: the animated clip the previous site played behind the
+   hero text (source/images/profile/hero-clip-*.webp, see layout/index.ejs). */
+
+.hero.media-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  justify-content: flex-end;
+  min-height: clamp(360px, 52vh, 640px);
+  padding: 40px;
+  border-radius: var(--radius-large);
+  color: #ffffff;
+}
+
+.hero.media-hero .title {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero.media-hero .description {
+  color: #ffffff;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.35) 35%,
+    transparent 65%
+  );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero.media-hero .title,
+  .hero.media-hero .description {
+    animation: hero-text-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero.media-hero .description {
+    animation-delay: 0.12s;
+  }
+
+  @keyframes hero-text-in {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .hero.media-hero {
+    min-height: clamp(300px, 46vh, 460px);
+    padding: 24px 20px;
+  }
+}
+
+/* Edition homepage: one card grid per category (layout/_partial/home-sections.ejs) */
+
+.home-section {
+  margin-bottom: 44px;
+}
+
+.home-section__head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  max-width: 980px;
+  margin: 0 auto 18px;
+}
+
+.home-section__title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.home-section__count {
+  padding: 1px 9px;
+  border-radius: var(--radius-full);
+  background: var(--color-background-secondary);
+  color: var(--color-text-tertiary);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-section__more {
+  margin-left: auto;
+  color: var(--color-text-accent);
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.home-section__more:hover {
+  text-decoration: underline;
+}
+
+/* Appbar language switcher (layout/_partial/nav.ejs) */
+
+.nav-lang {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-lang > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav-lang > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-lang__menu {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  z-index: 20;
+  display: grid;
+  gap: 2px;
+  min-width: 168px;
+  padding: 6px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-medium);
+  background: var(--color-background-secondary);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.nav-lang:not([open]) .nav-lang__menu {
+  display: none;
+}
+
+.nav-lang__item {
+  padding: 8px 12px;
+  border-radius: var(--radius-small);
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nav-lang__item:hover,
+.nav-lang__item:focus-visible {
+  background: var(--color-background-secondary-hover);
+}
+
+.nav-lang__item.is-current {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .nav-lang {
+    display: block;
+    width: 100%;
+  }
+
+  /* Inside the drawer the editions list is a plain vertical disclosure; the
+     drawer's height is recalculated on toggle (source/js/nav-lang.js). */
+  .nav-lang__menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 8px;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .nav-lang__item {
+    padding: 8px 0;
+  }
+}

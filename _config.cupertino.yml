@@ -1,0 +1,70 @@
+# Theme Cupertino overrides — merged over themes/cupertino/_config.yml
+# Docs: https://github.com/MrWillCom/hexo-theme-cupertino
+
+favicon: /favicon.svg
+manifest: /manifest.json
+
+# hero area content
+hero:
+  title: Akari
+  description: |
+    写一点字，留一点光。
+
+show_excerpt: false
+
+color_scheme: auto
+show_color_scheme_toggle: true
+
+# Chinese category names must not be uppercased
+uppercase_categories: false
+
+categories_post_count: true
+capitalize_tags: false
+hashtag_prefix_before_tags: true
+tags_post_count: true
+
+toc: true
+toc_max_depth: 2
+
+# nav title; the nav/footer links themselves are edition-aware and rendered by
+# scripts/helpers.js (locale_nav / locale_footer) so they stay inside the
+# visitor's edition.
+nav:
+  title: Akari
+
+license: CC BY-NC 4.0
+license_link: https://creativecommons.org/licenses/by-nc/4.0/
+
+search: false
+
+simple_icons: true
+bootstrap_icons: true
+
+date_display_format: YYYY-MM-DD
+
+builtin_components:
+  card: true
+  button: true
+  badge: true
+  utilities: true
+  carousel: true
+  callout: true
+
+squircle: true
+
+# NASA APOD background: fetched from the blog API (/api/nasa-apod) and faded in
+# behind the page (see source/js/nasa-background.js).
+apod_background: true
+
+# Animated hero clip on the edition homepages (source/images/profile/hero-clip-*.webp,
+# the animated art the previous site played behind the hero text).
+hero_clip: true
+
+insertions:
+  head:
+    # Site analytics (self-hosted, same tag the previous site used).
+    ending:
+      '<script defer src="https://analytics.rikka.moe/script.js" data-website-id="cdcfa939-9c79-48c3-8234-a2d87ebdf5b6"></script>'
+  body:
+    ending: ''
+  comments_section: ''

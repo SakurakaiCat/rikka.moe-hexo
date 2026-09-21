@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="gradLightRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF5252" stop-opacity="1" />
+      <stop offset="100%" stop-color="#E53935" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="gradMidRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E53935" stop-opacity="1" />
+      <stop offset="100%" stop-color="#C62828" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="gradDarkRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D32F2F" stop-opacity="1" />
+      <stop offset="100%" stop-color="#B71C1C" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="shadowOnBar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <polygon points="37.3,115 162.7,115 168.9,133 31.2,133" fill="url(#gradMidRed)" />
+  <polygon points="47.3,115 77.3,115 71.2,133 41.2,133" fill="url(#shadowOnBar)" />
+  <polygon points="122.7,115 152.7,115 158.9,133 128.9,133" fill="url(#shadowOnBar)" />
+  <polygon points="25,180 55,180 110,20 80,20" fill="url(#gradLightRed)" />
+  <polygon points="145,180 175,180 120,20 90,20" fill="url(#gradDarkRed)" />
+</svg>

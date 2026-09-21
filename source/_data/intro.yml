@@ -1,0 +1,187 @@
+# 首页「自我介绍」板块（源：rikka.moe HomePage.astro personalIntro + homepage.cjs）
+# 每个语言版本各有一份文案，文章页/首页按 page.lang 取用。
+# icon 已从 Phosphor 图标名映射到主题使用的 Bootstrap Icons。
+zh-cn:
+  title: 自我介绍
+  memoir_note: 以下是我的简单回忆录，没润色过。最底下是我的基础标签。
+  closing: 配图是用手机拍的一张，挺有意境的。
+  tag_header: 基础标签
+  toggle_open: 展开回忆录
+  toggle_close: 收起回忆录
+  image: /images/profile/personal-intro-cover.jpg
+  image_alt: 冬天拍的照片
+  cards:
+  - icon: bi-mortarboard
+    label: 身份
+    value: 19 岁 · 大一在读
+  - icon: bi-geo-alt
+    label: 坐标
+    value: 广西柳州人 · 南宁长大 · 东北上学
+  - icon: bi-compass
+    label: 兴趣
+    value: 经济学 > 计算机 = 数学 > 心理学
+  - icon: bi-music-note-beamed
+    label: 爱好
+    value: 音乐 · 二次元 · 写作
+  - icon: bi-flower1
+    label: 性格
+    value: 社恐、内向、敏感，总想当「老好人」
+  tags:
+  - 感兴趣的东西：经济学 > 计算机 = 数学 > 心理学
+  - 业余爱好：音乐、二次元和写作
+  - 最喜欢的地方：我在南宁的小窝（因为在这里有我可以独居的小窝，独处很安静自由，半夜凌晨三点搬椅子到天台看夜空发呆都行），大自然乡下的树林、河流和草原
+  - 最希望得到的东西：快乐和自由
+  - 性格：社恐、内向、比较忧郁和焦虑，在意别人的看法、敏感，总是想当「老好人」
+  paragraphs:
+  - 哦嗨哟，我是香澄，来自广西柳州，现在东北上学，普通的大一学生。
+  - 我来自广西柳州，初中后搬至南宁上学。
+  - 小学时期，因为一系列家庭和学校的因素，给我留下不少的创伤，好几年过去了，我还记得，举个例子，被推到卫生间里欺负，东西被丢进里面等。导致我连小学数学都学不明白，一度被拉去检测智商（我至今记得好像是在一家医院里，其中一个环节是对着一个电脑屏幕，好像是做什么类似消消乐点图找不同的东西），当然后面还是过了，可能白花钱了。
+  - 我的性格大抵就是在这时开始成型，那时的我就比较独处了。我还记得有一次，我在学校闯祸了，当时我不敢回家，不然要被打，被老师发现的话就被抓起来留校挨骂，当时我就在学校里找了一个地方，类似会议室的地方，躲在桌底，什么都没吃在那里躲了几个小时，最后没法才出来。
+  - 小学几年属实是给我留下了严重的心理创伤，导致我很早就开始沉迷网上冲浪，折腾计算机和手机。度过了小学的垃圾时间，上了初中以后，初一的时候，家里又闹掰了，每天就是打架和吵着要离婚，那时一系列操作把我整得半死不活，学校和家里都不是什么好地方，我也特别讨厌任何程度的亲情。回忆起这些事情也有点让我大脑发热。
+  - 省略了一大堆垃圾时间后，直到初二上学期，我才开始迈向和自己和解的道路。其一是，我吃上了舍曲林（一种抗抑郁药），稍微给我一些喘息空间了；其二是初二第二次分班的时候，我遇到了很好的班主任、老师和同学。班主任见到我的状况以后，对我很包容，甚至时不时叫我去办公室鼓励我，老师也是给我灌了一堆鸡汤。
+  - 还有几个同学，主动找到我邀请我一起玩，甚至开故事会，聊天，而不是嘲笑我是废物。自那之后，我就开始努力学习了，努力跳出恶性循环。这段学习过程可以写很长（包括自学、老师帮我补习和同学帮助我），不过总的来说，到初三的时候我学得已经挺不错了，我记得我中考最好的科目是数学和英语，最差的是化学。
+  - 总之，经过一系列可被省略不谈的变故后，我进了某重点高中读，进去的时候被被进普通班了。进入高中的第一个星期，我还尝试「开启人生新篇章」，不吃药也不天天网络冲浪，结果第一个星期我就差点被折磨没了，后来还是顺应自然了。
+  - 我高中三年可以写很长，不过简单来说就是：高一不知道干嘛，糊里糊涂选了文科（因为化学不好，虽然我当时物理和生物非常不错，这是我人生最后悔的几个决定之一），高二以后开始努力。高中三年把我人生前十几年强行扭转了，大抵是因为我继续吃药，然后高二的时候我开始吃鱼油和一堆补品（还真的有用，不是尬吹）。
+  - 吃这些药，把我整得一点情绪都没，直接导致我对一切事情都失去兴趣，不知道真正的快乐是什么，甚至连去郊游、被拉去游乐园玩或者是大家经常做的事情，比如探店，说哪里有什么好玩好吃的，社团活动和社交，我全部都觉得一点意思都没，不能理解。但是我发现，我考试考得好，老师会鼓励我，同学们钦佩我，走在路上都有人讨论我，亲戚也对我改观，我就开始对学习上瘾了，整个高中三年我以学习为乐，我最开心有活力的时刻是，考试成绩排名出来的那一瞬间。我记得高二的时候，我数学就一百多分，英语也差不多。后来我就自己找书和网课看，发现还挺有意思，于是反倒成了我的爱好。
+  - 这一个正循环直接让我在几个月里就提了好几十分，让我顺便了解到了数学以及次之的经济学（初中的时候我更喜欢计算机和心理学）是多么有意思。那时的我比较疯狂，躺在床上睡觉都在算题，入魔了。我高中也碰上了比较好的班主任，比较包容我，给我很多的自由，我过得还是很舒服的。
+  - 高中三年给我的感觉就是，每一刻压力都很大，有时压力大到想吐，但是学习起来很开心。我之后甚至自己就成为了别人的灯塔，正如我之前发过的一篇回忆，有位同学每次晚自习结束都最晚留下来，陪我一起走，时不时还互相鼓励，挺好的。
+  - 当然，关于回忆录似乎还有很多可写的。但是每当尝试回想起这些事情，容易使我脑子发热，触发躁狂，我想还是算了，好不容易缓过来。另一条线是，我家庭整体是走下坡路的，这条线也很痛苦，不过就写到这吧。
+  - 上了大学，直到现在，老实说我也没快乐过几次，我的情绪状态大抵就在平静、躁狂和抑郁之间徘徊。我比较喜欢平静，什么情绪都没，即便包括快乐，但至少意味着我无需动用太多精力来压抑，挺好的。
+zh-tw:
+  title: 自我介紹
+  memoir_note: 以下是我的簡單回憶錄，沒潤色過。最底下是我的基礎標籤。
+  closing: 配圖是用手機拍的一張，挺有意境的。
+  tag_header: 基礎標籤
+  toggle_open: 展開回憶錄
+  toggle_close: 收起回憶錄
+  image: /images/profile/personal-intro-cover.jpg
+  image_alt: 冬天拍的照片
+  cards:
+  - icon: bi-mortarboard
+    label: 身份
+    value: 19 歲 · 大一在讀
+  - icon: bi-geo-alt
+    label: 座標
+    value: 廣西柳州人 · 南寧長大 · 東北上學
+  - icon: bi-compass
+    label: 興趣
+    value: 經濟學 > 計算機 = 數學 > 心理學
+  - icon: bi-music-note-beamed
+    label: 愛好
+    value: 音樂 · 二次元 · 寫作
+  - icon: bi-flower1
+    label: 性格
+    value: 社恐、內向、敏感，總想當「老好人」
+  tags:
+  - 感興趣的東西：經濟學 > 計算機 = 數學 > 心理學
+  - 業餘愛好：音樂、二次元和寫作
+  - 最喜歡的地方：我在南寧的小窩（因為在這裡有我可以獨居的小窩，獨處很安靜自由，半夜凌晨三點搬椅子到天台看夜空發呆都行），大自然鄉下的樹林、河流和草原
+  - 最希望得到的東西：快樂和自由
+  - 性格：社恐、內向、比較憂鬱和焦慮，在意別人的看法、敏感，總是想當「老好人」
+  paragraphs:
+  - 哦嗨喲，我是香澄，來自廣西柳州，現在東北上學，普通的大一學生。
+  - 我來自廣西柳州，初中後搬至南寧上學。
+  - 小學時期，因為一系列家庭和學校的因素，給我留下不少的創傷，好幾年過去了，我還記得，舉個例子，被推到衛生間裡欺負，東西被丟進裡面等。導致我連小學數學都學不明白，一度被拉去檢測智商（我至今記得好像是在一家醫院裡，其中一個環節是對著一個電腦螢幕，好像是做什麼類似消消樂點圖找不同的東西），當然後面還是過了，可能白花錢了。
+  - 我的性格大抵就是在這時開始成型，那時的我就比較獨處了。我還記得有一次，我在學校闖禍了，當時我不敢回家，不然要被打，被老師發現的話就被抓起來留校挨罵，當時我就在學校裡找了一個地方，類似會議室的地方，躲在桌底，什麼都沒吃在那裡躲了幾個小時，最後沒法才出來。
+  - 小學幾年屬實是給我留下了嚴重的心理創傷，導致我很早就開始沉迷網上衝浪，折騰計算機和手機。度過了小學的垃圾時間，上了初中以後，初一的時候，家裡又鬧掰了，每天就是打架和吵著要離婚，那時一系列操作把我整得半死不活，學校和家裡都不是什麼好地方，我也特別討厭任何程度的親情。回憶起這些事情也有點讓我大腦發熱。
+  - 省略了一大堆垃圾時間後，直到初二上學期，我才開始邁向和自己和解的道路。其一是，我吃上了舍曲林（一種抗抑鬱藥），稍微給我一些喘息空間了；其二是初二第二次分班的時候，我遇到了很好的班主任、老師和同學。班主任見到我的狀況以後，對我很包容，甚至時不時叫我去辦公室鼓勵我，老師也是給我灌了一堆雞湯。
+  - 還有幾個同學，主動找到我邀請我一起玩，甚至開故事會，聊天，而不是嘲笑我是廢物。自那之後，我就開始努力學習了，努力跳出惡性循環。這段學習過程可以寫很長（包括自學、老師幫我補習和同學幫助我），不過總的來說，到初三的時候我學得已經挺不錯了，我記得我中考最好的科目是數學和英語，最差的是化學。
+  - 總之，經過一系列可被省略不談的變故後，我進了某重點高中讀，進去的時候被被進普通班了。進入高中的第一個星期，我還嘗試「開啟人生新篇章」，不吃藥也不天天網路衝浪，結果第一個星期我就差點被折磨沒了，後來還是順應自然了。
+  - 我高中三年可以寫很長，不過簡單來說就是：高一不知道幹嘛，糊里糊塗選了文科（因為化學不好，雖然我當時物理和生物非常不錯，這是我人生最後悔的幾個決定之一），高二以後開始努力。高中三年把我人生前十幾年強行扭轉了，大抵是因為我繼續吃藥，然後高二的時候我開始吃魚油和一堆補品（還真的有用，不是尬吹）。
+  - 吃這些藥，把我整得一點情緒都沒，直接導致我對一切事情都失去興趣，不知道真正的快樂是什麼，甚至連去郊遊、被拉去遊樂園玩或者是大家經常做的事情，比如探店，說哪裡有什麼好玩好吃的，社團活動和社交，我全部都覺得一點意思都沒，不能理解。但是我發現，我考試考得好，老師會鼓勵我，同學們欽佩我，走在路上都有人討論我，親戚也對我改觀，我就開始對學習上癮了，整個高中三年我以學習為樂，我最開心有活力的時刻是，考試成績排名出來的那一瞬間。我記得高二的時候，我數學就一百多分，英語也差不多。後來我就自己找書和網課看，發現還挺有意思，於是反倒成了我的愛好。
+  - 這一個正循環直接讓我在幾個月裡就提了好幾十分，讓我順便了解到了數學以及次之的經濟學（初中的時候我更喜歡計算機和心理學）是多麼有意思。那時的我比較瘋狂，躺在床上睡覺都在算題，入魔了。我高中也碰上了比較好的班主任，比較包容我，給我很多的自由，我過得還是很舒服的。
+  - 高中三年給我的感覺就是，每一刻壓力都很大，有時壓力大到想吐，但是學習起來很開心。我之後甚至自己就成為了別人的燈塔，正如我之前發過的一篇回憶，有位同學每次晚自習結束都最晚留下來，陪我一起走，時不時還互相鼓勵，挺好的。
+  - 當然，關於回憶錄似乎還有很多可寫的。但是每當嘗試回想起這些事情，容易使我腦子發熱，觸發躁狂，我想還是算了，好不容易緩過來。另一條線是，我家庭整體是走下坡路的，這條線也很痛苦，不過就寫到這吧。
+  - 上了大學，直到現在，老實說我也沒快樂過幾次，我的情緒狀態大抵就在平靜、躁狂和抑鬱之間徘徊。我比較喜歡平靜，什麼情緒都沒，即便包括快樂，但至少意味著我無需動用太多精力來壓抑，挺好的。
+en:
+  title: About Me
+  memoir_note: Below is my brief memoir, unpolished. My basic tags are at the very bottom.
+  closing: The photo was taken with my phone; it has a certain mood to it.
+  tag_header: Basic Tags
+  toggle_open: Read the memoir
+  toggle_close: Hide the memoir
+  image: /images/profile/personal-intro-cover.jpg
+  image_alt: A photo taken in winter
+  cards:
+  - icon: bi-mortarboard
+    label: Who
+    value: 19 · college freshman
+  - icon: bi-geo-alt
+    label: Where
+    value: Liuzhou, Guangxi · raised in Nanning · studying in NE China
+  - icon: bi-compass
+    label: Into
+    value: Economics > CS = Math > Psychology
+  - icon: bi-music-note-beamed
+    label: Hobbies
+    value: Music · Anime · Writing
+  - icon: bi-flower1
+    label: Personality
+    value: Shy, introverted, sensitive peacemaker
+  tags:
+  - 'Interests: economics > computer science = mathematics > psychology'
+  - 'Hobbies: music, anime, and writing'
+  - 'Favourite place: my little room in Nanning (because I have it all to myself — it is quiet and free, and I can carry a chair to the rooftop at 3 a.m. to stare at the night sky), and the woods, rivers, and grasslands of the countryside'
+  - 'What I want most: happiness and freedom'
+  - 'Personality: socially anxious, introverted, somewhat melancholic and anxious, sensitive and concerned about what others think, always trying to be the "nice one"'
+  paragraphs:
+  - Good morning — I am Kasumi, from Liuzhou, Guangxi. Right now I am a freshman studying in the northeast. Just an ordinary university student.
+  - I am originally from Liuzhou, Guangxi, and moved to Nanning for middle school.
+  - During primary school, a combination of family and school factors left me with quite a bit of trauma. Years later I still remember things like being pushed into the bathroom and bullied, my belongings thrown in there. It got so bad that I could not even understand elementary-school math, and I was once taken for an IQ test (I still vaguely remember sitting in front of a computer screen in what I think was a hospital, doing something like a matching-and-spotting-the-difference game). I passed in the end — probably a waste of money.
+  - My personality was largely shaped during those years. I already preferred being alone. I remember one time I got in trouble at school and was too scared to go home because I would be beaten, and if a teacher found me I would be kept behind and scolded. So I hid under a table in what I think was a meeting room, ate nothing for hours, and only came out when I had no other choice.
+  - Those primary-school years left me with serious psychological scars and drove me to spend almost all my time online, tinkering with computers and phones. After getting through that dead time I entered middle school, and in the first year my family fell apart again — daily arguments, talk of divorce. The whole mess nearly destroyed me; neither school nor home felt safe, and I came to resent any form of family affection. Just thinking about it now still makes my head heat up.
+  - 'Skipping over a lot of wasted time: it was not until the second semester of eighth grade that I started making peace with myself. First, I began taking sertraline (an antidepressant), which gave me a little breathing room. Second, after the second class reshuffle I met a wonderful homeroom teacher and good classmates. The teacher was very tolerant once she saw my state, and would even call me into the office to encourage me. She fed me quite a few motivational speeches.'
+  - A few classmates actively invited me to hang out, tell stories, and chat, instead of mocking me for being useless. After that I began studying hard, trying to break out of the vicious cycle. That learning journey could fill a long story (self-study, teacher tutoring, classmates helping), but by ninth grade I was doing quite well. I remember my best subjects on the high-school entrance exam were math and English; my worst was chemistry.
+  - After a series of events I would rather skip, I was admitted to a key high school but placed in an ordinary class. During my first week I tried to "turn over a new leaf" — no medication, no staying online all day. By the end of that week I was nearly destroyed, so I just went back to what felt natural.
+  - 'My three years of high school could fill a long essay, but in short: in the first year I was aimless and ended up choosing the humanities track on impulse (because I was bad at chemistry, even though my physics and biology were very good — one of the biggest regrets of my life). From the second year I started working hard. Those three years completely reshaped the first nineteen years of my life, largely because I kept taking medication and, in the second year, started taking fish oil and a bunch of supplements (they actually worked — I am not exaggerating).'
+  - Those medications flattened all my emotions. I lost interest in everything and forgot what real happiness felt like. Even things like school trips, amusement parks, exploring restaurants, club activities, and socialising — none of it appealed to me in the slightest; I simply could not understand the point. But I noticed that when I scored well on exams, teachers praised me, classmates admired me, people talked about me in the hallways, and even relatives changed their opinion of me. So I became addicted to studying. For all three years of high school my joy came from learning, and my most exhilarating moments were when exam rankings were posted. I remember scoring over 100 in math by the second year, and about the same in English. Later I found textbooks and online courses on my own and discovered they were genuinely interesting, so studying turned into a hobby.
+  - 'This positive feedback loop pushed my scores up by dozens of points within months and led me to discover how fascinating mathematics — and, secondarily, economics — really are (in middle school I had preferred computer science and psychology). I was a bit obsessive: lying in bed trying to fall asleep, I would still be solving problems in my head. I also had a good homeroom teacher in high school who was tolerant and gave me plenty of freedom, so life was comfortable.'
+  - 'My overall feeling of those three years is that the pressure was enormous at every moment — sometimes so intense I felt like throwing up — yet studying itself made me happy. I even became a lighthouse for others: as I once recalled in a post, a classmate would stay behind after every evening study session to walk with me, and we would encourage each other. It was nice.'
+  - There is certainly much more I could write about my memoir. But whenever I try to recall these things, my head overheats and triggers hypomania, so I think I will stop. I barely pulled through. Another thread is that my family as a whole has been in decline, and that thread is painful too — but I will leave it here.
+  - Since starting university, honestly, I have rarely been happy. My emotional state mostly oscillates between calm, hypomania, and depression. I prefer the calm — no emotions at all, including happiness — because at least it means I do not have to spend energy suppressing anything. That is fine.
+ja:
+  title: 自己紹介
+  memoir_note: 以下は飾らない自分の回顧録です。基本タグは一番下にあります。
+  closing: 写真はスマホで撮った一枚で、なかなか趣があります。
+  tag_header: 基本タグ
+  toggle_open: 回顧録をひらく
+  toggle_close: 回顧録をとじる
+  image: /images/profile/personal-intro-cover.jpg
+  image_alt: 冬に撮った写真
+  cards:
+  - icon: bi-mortarboard
+    label: 身份
+    value: 19歳 · 大学一年生
+  - icon: bi-geo-alt
+    label: 場所
+    value: 広西柳州出身 · 南寧育ち · 東北で就学
+  - icon: bi-compass
+    label: 興味
+    value: 経済学 > 情報科学 = 数学 > 心理学
+  - icon: bi-music-note-beamed
+    label: 趣味
+    value: 音楽 · 二次元 · 執筆
+  - icon: bi-flower1
+    label: 性格
+    value: 社交不安・内向的・敏感な「いい人」
+  tags:
+  - 興味があるもの：経済学 > 情報科学 = 数学 > 心理学
+  - 趣味：音楽、二次元、執筆
+  - 一番好きな場所：南寧の自分の部屋（一人暮らしで静かで自由、夜中に3時に椅子をベランダに出して夜空を見上げられる）、自然の田舎の森・川・草原
+  - 一番欲しいもの：幸せと自由
+  - 性格：社交不安、内向的、やや憂鬱で焦虑しやすい、他人の目を気にして敏感、「いい人」を演じてしまう
+  paragraphs:
+  - おはようございます、香澄です。広西チワン族自治区柳州出身で、今は東北の大学に通う普通の一年生です。
+  - 出身は柳州で、中学から南寧に引っ越しました。
+  - 小学校の頃、家庭と学校のさまざまな要因で大きなトラウマを負いました。何年経った今でも覚えているのですが、たとえばトイレに押し込まれていじめられたり、荷物を捨てられたりしました。おかげで小学校の算数すらまともに理解できず、一度知能検査を受けさせられたことがあります（病院のパソコン画面で、マッチングゲームのようなものをやらされた記憶があります）。結局合格しましたが、たぶん無駄遣いでした。
+  - 私の性格はたぶんこの頃から形成され始めました。その頃から一人でいることを好んでいました。ある日学校でトラブルを起こして、家に帰ったら殴られるのが怖くて、先生に見つかったら留め置きされて叱られるのが怖くて、学校の中の会議室のような場所を見つけ、机の下に隠れて何時間も何も食べずに過ごしました。とうとう仕方なく出てきました。
+  - 小学校の数年間は本当に深刻な心の傷を残し、とても早い時期からネットに没頭してパソコンやスマホをいじり回すようになりました。小学校のゴミタイムを乗り越えて中学に上がると、一年生の時にまた家庭が崩壊し、毎日が口論と離婚話の嵐で、学校も家庭もいい場所じゃなくて、あらゆるレベルの親情を本当に嫌いになりました。思い返すと頭が熱くなります。
+  - 省略された大量の無駄な時間を飛ばして、中学二年の後期になってようやく自分と向き合い始めました。一つ目は、セルトラリン（抗うつ薬）を飲み始めて少し余裕が生まれたこと。二つ目は、二回目のクラス替えでとてもいい担任と先生と同級生に出会えたことです。担任は私の状況を見てとても寛容で、しょっちゅう職務室に呼んで励ましてくれました。先生たちもたくさんの励ましの言葉をくださいました。
+  - 何人かのクラスメイトが自分から声をかけてきて、一緒に遊んだり、物語会を開いたり、おしゃべりしたりしました。バカにするんじゃなくて。それから私は勉強に励み始め、悪循環から抜け出す努力をしました。この学習の過程は長く書ける（自学、先生の補習、クラスメイトの助け）ですが、要するに、中学三年になった頃はかなりいい成績を取れていました。入試で一番良かった科目は数学と英語、一番悪かったのは化学です。
+  - 省略すべき一連の変故の後、ある進学校に入学しましたが、普通クラスに入れられました。入学一週目に「人生の新たな章を開こう」と薬をやめてネット三昧もやめようとしましたが、一週目であんなにやられて、結局自然に逆らわないことにしました。
+  - 高校三年間は長く書けるのですが、簡単に言うと：一年目はわけがわからず、文系を選択しました（化学が苦手だったから。でも物理と生物はとても得意で、これが人生で一番後悔する決断の一つです）。二年目から本気を出しました。高校三年間は人生の最初の十数年を強引に変えました。薬を飲み続けたことと、二年目から魚油やいろいろなサプリを始めたことが大きいです（本当に効きました、冗談じゃありません）。
+  - これらの薬のせいで感情が完全に消え、あらゆることへの興味を失い、本当の幸せが何かわからなくなりました。遠足や遊園地、みんながよく行くお店巡り、部活動、社交⋯⋯全部つまらないと感じて理解できませんでした。でもテストでいい点を取ると先生がほめてくれ、クラスメイトが尊敬してくれ、道を歩いているときにも噂され、親戚の見方も変わりました。それで勉強にハマるようになりました。高校三年間は勉強を楽しみにしていて、一番嬉しくて元気な瞬間はテストの順位が発表される瞬間でした。二年目の頃は数学も英語も百点以上でした。後で自分で教科書やオンライン講座を見つけて、結構面白いと気づき、むしろ趣味になりました。
+  - この好循環で数ヶ月のうちに何十点も上がり、数学とその次に経済学がいかに面白いかも発見しました（中学の頃はコンピュータ科学と心理学がもっと好きだった）。当時の私はかなりのめり込んで、寝ていても頭の中で問題を解いていました。高校でもいい担任に恵まれて寛容で自由をたくさんくれたので、とても快適に過ごせました。
+  - 高校三年間の全体的な感覚は、一瞬一瞬がとてもプレッシャーが大きく、ときどき吐きそうになるほどでしたが、勉強しているときはとても幸せでした。誰かの灯台にもなりました。以前書いた思い出のように、あるクラスメイトが毎晩の自習後、一番遅くまで残って一緒に帰って、ときどき励まし合っていました。とてもよかったです。
+  - 回顧録にはまだまだ書けることがありそうですが、これらのことを思い返そうとすると頭が熱くなって躁状態を引き起こしかねないので、やめておきます。やっと持ち直したところです。もう一つの線は、家族全体が下り坂だったことで、これもとても苦痛でしたが、ここまでにしておきます。
+  - 大学に入ってから今に至るまで、正直なところ何度しか幸せを感じたことがありません。私の感情状態はほぼ平静・躁・うつの間を行き来しています。平静が好きです。幸せを含めあらゆる感情がない状態ですが、少なくとも抑えるのにエネルギーを使わなくて済みます。それでいいのです。

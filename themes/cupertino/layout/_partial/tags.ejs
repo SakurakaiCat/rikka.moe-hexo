@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="meta">
+    <h1 class="title"><%= __('topics') %></h1>
+  </div>
+  <div class="tags">
+    <% const entries = page.entries || site.tags.map((tag) => ({ name: tag.name, url: tag.path, count: tag.length })); %>
+    <% entries.forEach((entry) => { %>
+    <a href="<%- url_for(entry.url) %>" class="tag"><% if (theme.hashtag_prefix_before_tags) { %>#<% } %><%- entry.name %><% if (theme.tags_post_count) { %><span class="count"><%- entry.count %></span><% } %></a>
+    <% }) %>
+  </div>
+</div>

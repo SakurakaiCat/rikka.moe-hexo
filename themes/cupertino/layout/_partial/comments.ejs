@@ -1,0 +1,10 @@
+<%
+  // Twikoo comments, same deployment as the previous site. The container id and
+  // language follow the edition the page belongs to.
+%>
+<section class="post-comments" data-twikoo-lang="<%- locale_html_lang() %>" data-twikoo-path="<%- page.comment_path || '' %>" data-twikoo-env-id="https://comment.rikka.moe">
+  <h2><%= __('comments') %></h2>
+  <div id="twikoo-<%- locale_of_page().key %>" data-twikoo-container></div>
+</section>
+<script src="<%- asset('js/twikoo-counts.js') %>"></script>
+<script src="<%- asset('js/comments.js') %>"></script>

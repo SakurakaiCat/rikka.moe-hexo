@@ -1,0 +1,106 @@
+<% if (theme.search == true && page.type == 'search') { %>
+  <%- partial('_partial/search') %>
+<% } else if (page.type == 'tags') { %>
+  <%- partial('_partial/tags') %>
+<% } else if (page.type == 'categories') { %>
+  <%- partial('_partial/categories') %>
+<% } else { %>
+<article class="post">
+  <% if (page.cover_image) { %>
+  <div class="cover">
+    <img src="<%= page.cover_image %>" alt="<%= page.cover_image_alt %>" class="cover-img" data-pagefind-meta="image[src], image_alt[alt]" />
+  </div>
+  <% } %>
+  <div class="meta">
+    <% if (page.categories && page.categories.length) { %>
+    <div class="categories<%= theme.uppercase_categories ? ' text-uppercase' : '' %>">
+    <% page.categories.forEach((category) => { %>
+      <a href="<%- url_for(category_url(category.name)) %>"><%= localized_category(category.name) %></a>
+    <% }) %>
+    </div>
+    <% } %>
+
+    <% if (!page.no_date) { %>
+    <time class="date" datetime="<%- moment(page.date).format() %>">
+      <%- moment(page.date).format(theme.date_display_format) %>
+    </time>
+    <% } %>
+
+    <h1 class="title" data-pagefind-meta="title"><%= page.title %></h1>
+
+    <% if (is_post()) { %>
+    <div class="post-stats" data-post-url="<%- encodeURI(page.path) %>" data-pagefind-ignore>
+      <span class="post-stats__item" aria-label="<%= __('views') %>">
+        <i class="bi bi-eye" aria-hidden="true"></i>
+        <span data-stats-views>0</span>
+      </span>
+      <span class="post-stats__item" aria-label="<%= __('comments_count') %>">
+        <i class="bi bi-chat-dots" aria-hidden="true"></i>
+        <span data-stats-comments>0</span>
+      </span>
+    </div>
+    <script src="<%- asset('js/twikoo-counts.js') %>"></script>
+    <script src="<%- asset('js/post-stats.js') %>"></script>
+    <% } %>
+  </div>
+
+  <div class="content">
+    <%- page.content %>
+  </div>
+
+  <% if (!page.no_about) { %>
+  <div class="about" data-pagefind-ignore>
+    <h2><%= __('about_this_post') %></h2>
+    <div class="details"><%- __('this_post_is_written_by_licensed_under', { author: config.author, license: `<a href="${theme.license_link}">${theme.license}</a>` }) %></div>
+    <% if (page.tags && page.tags.length) { %>
+    <p class="tags<%= theme.capitalize_tags ? ' text-capitalize' : '' %>">
+      <i class="bi bi-tags icon"></i>
+      <% page.tags.forEach(tag => { %>
+      <a href="<%- url_for(topic_url(tag.name)) %>" class="tag"><% if (theme.hashtag_prefix_before_tags) { %>#<% } %><%- localized_topic(tag.name) %></a>
+      <% }) %>
+    </p>
+    <% } %>
+    <% const alternates = post_alternates(); %>
+    <% if (alternates.length) { %>
+    <p class="editions">
+      <i class="bi bi-translate icon"></i>
+      <span class="label"><%= __('other_languages') %></span>
+      <% alternates.forEach((alternate) => { %>
+      <a href="<%- url_for(alternate.url) %>" hreflang="<%- alternate.hreflang %>" data-locale-preference="<%- alternate.lang %>" class="edition"><%- alternate.display_name %></a>
+      <% }) %>
+    </p>
+    <% } %>
+    <% if (page.about_extra_description) { %><div class="extra"><%- page.about_extra_description %></div><% } %>
+  </div>
+  <% } %>
+
+  <div class="container post-prev-next" data-pagefind-ignore>
+    <% const siblings = edition_siblings(); %>
+    <% if (siblings.prev) { %>
+    <a href="<%= url_for(siblings.prev.path) %>" class="next">
+      <div class="text">
+        <p class="label"><%= __('next_post') %></p>
+        <h3 class="title"><%= siblings.prev.title %></h3>
+      </div>
+    </a>
+    <% } else { %><a class="next"></a><% } %>
+    <% if (siblings.next) { %>
+    <a href="<%= url_for(siblings.next.path) %>" class="prev">
+      <div class="text">
+        <p class="label"><%= __('prev_post') %></p>
+        <h3 class="title"><%= siblings.next.title %></h3>
+      </div>
+    </a>
+    <% } else { %><a class="prev"></a><% } %>
+  </div>
+
+  <% if (!page.no_comments) { %>
+    <%- partial('_partial/comments') %>
+    <%- theme.insertions.comments_section %>
+  <% } %>
+
+  <% if (page.guestbook) { %>
+  <script src="<%- asset('js/guestbook.js') %>" defer></script>
+  <% } %>
+</article>
+<% } %>

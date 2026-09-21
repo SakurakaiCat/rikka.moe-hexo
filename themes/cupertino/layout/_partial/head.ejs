@@ -1,0 +1,141 @@
+<head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = __('archives');
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = __('category') + ': ' + page.category;
+  } else if (is_tag()){
+    if (theme.hashtag_prefix_before_tags) {
+      title = '#' + page.tag;
+    } else {
+      title = __('tag') + ': ' + page.tag;
+    }
+  } else if (theme.search == true && page.type == 'search') {
+    title = __('search')
+  } else if (page.show_locale_chooser) {
+    title = __('choose_language_title');
+  } else if (page.type == 'tags') {
+    title = __('topics');
+  } else if (page.type == 'categories') {
+    title = __('categories');
+  }
+  %>
+  <title><% if (title){ %><%= title %> - <% } %><%= config.title %></title>
+  <% if (theme.favicon){ %>
+    <%- favicon_tag(theme.favicon) %>
+  <% } %>
+  <% if (theme.manifest) { %>
+  <link rel='manifest' href='<%= theme.manifest %>'>
+  <% } %>
+
+  <%- open_graph({ image: page.cover_image }) %>
+
+  <link rel="alternate" type="application/atom+xml" href="<%- url_for(`/${locale_of_page().key}/atom.xml`) %>" title="<%- config.title %> — <%- locale_of_page().display_name %>">
+  <% if (is_post()) { %>
+  <%
+    const alternates = post_alternates();
+    const self = { lang: locale_of_page().key, hreflang: locale_of_page().html_lang, url: page.path };
+    const xDefault = (alternates.find((alternate) => alternate.lang === 'en') || self).url;
+  %>
+  <% [self].concat(alternates).forEach((alternate) => { %>
+  <link rel="alternate" hreflang="<%- alternate.hreflang %>" href="<%- url_for(alternate.url) %>">
+  <% }) %>
+  <link rel="alternate" hreflang="x-default" href="<%- url_for(xDefault) %>">
+  <% } %>
+
+  <script>window.ThemeCupertino = {}</script>
+
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <% if (theme.simple_icons) { %>
+  <%- css(getCdnUrl('simple-icons-font', '16', 'font/simple-icons.min.css')) %>
+  <% } %>
+  <% if (theme.bootstrap_icons) { %>
+  <%- css(getCdnUrl('bootstrap-icons', '1', 'font/bootstrap-icons.min.css')) %>
+  <% } %>
+
+  <%- css('css/var') %>
+  <%- css('css/main') %>
+  <%- css('css/typography') %>
+  <%- css('css/code-highlighting') %>
+
+  <% if (theme.builtin_components.card) { %>
+  <%- css('css/components/card') %>
+  <% } %>
+  <% if (theme.builtin_components.button) { %>
+  <%- css('css/components/button') %>
+  <% } %>
+  <% if (theme.builtin_components.badge) { %>
+  <%- css('css/components/badge') %>
+  <% } %>
+  <% if (theme.builtin_components.utilities) { %>
+  <%- css('css/components/utilities') %>
+  <% } %>
+  <% if (theme.builtin_components.carousel) { %>
+  <%- css('css/components/carousel') %>
+  <% } %>
+  <% if (theme.builtin_components.callout) { %>
+  <script>ThemeCupertino['_calloutStyles'] = `<%- css('css/components/callout') %>`</script>
+  <%- js('js/components/callout.js') %>
+  <% } %>
+
+  <%- css('css/nav') %>
+  <%- css('css/paginator') %>
+  <%- css('css/footer') %>
+  <%- css('css/post-list') %>
+  <% if (theme.rainbow_banner) { %>
+  <%- css('css/rainbow-banner') %>
+  <% } %>
+  <% if (theme.toc) { %>
+  <%- css('css/toc') %>
+  <% } %>
+  <% if (is_homepage()) { %>
+  <%- css('css/index') %>
+  <% } %>
+  <% if (!is_homepage()) { %>
+  <%- css('css/post') %>
+  <% } %>
+  <% if (is_archive() || is_category() || is_tag()) { %>
+  <%- css('css/archive') %>
+  <% } %>
+  <% if (theme.search == true && page.type == 'search') { %>
+  <%- css('pagefind/pagefind-ui.css') %>
+  <%- js('pagefind/pagefind-ui.js') %>
+  <%- css('css/search') %>
+  <% } %>
+  <% if (page.type == 'tags') { %>
+  <%- css('css/tags') %>
+  <% } %>
+  <% if (page.type == 'categories') { %>
+  <%- css('css/categories') %>
+  <% } %>
+  <% if (theme.scroll_reveal) { %>
+  <%- css('css/scroll-reveal') %>
+  <% } %>
+  <% if (theme.view_transition) { %>
+  <%- css('css/view-transition') %>
+  <% } %>
+  <% if (theme.smooth_scroll) { %>
+  <script src="<%- getCdnUrl('lenis', '1', 'dist/lenis.min.js') %>"></script>
+  <%- css(getCdnUrl('lenis', '1', 'dist/lenis.css')) %>
+  <%- js('js/smooth-scroll.js') %>
+  <% } %>
+
+  <link rel="stylesheet" href="<%- asset('css/migrated.css') %>">
+  <link rel="stylesheet" href="<%- asset('css/guestbook.css') %>">
+  <%- js('js/head.js') %>
+  <script>window.__AKARI_API_BASE__ = <%- api_base() %>;</script>
+  <%- locale_routing() %>
+  <%- theme.insertions.head.ending %>
+</head>

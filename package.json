@@ -1,0 +1,28 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server",
+    "api:build": "esbuild api/index.ts --bundle --platform=node --format=esm --target=node22 --external:better-sqlite3 --outfile=api/dist/index.mjs --log-level=warning",
+    "api:start": "node api/dist/index.mjs"
+  },
+  "hexo": {
+    "version": "8.1.2"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "esbuild": "^0.28.2",
+    "feedsmith": "^3.0.0",
+    "hexo": "^8.0.0",
+    "hexo-autoprefixer": "^2.0.0",
+    "hexo-pagination": "^4.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.0",
+    "hexo-server": "^3.0.0",
+    "sass": "^1.104.1"
+  }
+}

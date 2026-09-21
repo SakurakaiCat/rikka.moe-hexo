@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="<%= locale_html_lang() %>" data-font-locale="<%= locale_of_page().key %>">
+  <%- partial('_partial/head') %>
+  <body
+    data-color-scheme="<%= theme.color_scheme %>"
+    data-uppercase-categories="<%= theme.uppercase_categories %>"
+    <% if (theme.rainbow_banner == true) { %>
+    data-rainbow-banner="<%= theme.rainbow_banner %>"
+    data-rainbow-banner-shown="<%= theme.rainbow_banner_shown %>"
+    data-rainbow-banner-month="<%= theme.rainbow_banner_month %>"
+    data-rainbow-banner-colors="<%= theme.rainbow_banner_colors %>"
+    <% } %>
+    data-config-root="<%- config.root %>"
+    <% if (theme.toc == true) { %>
+    data-toc="<%= theme.toc %>"
+    data-toc-max-depth="<%= theme.toc_max_depth %>"
+    <% } %>
+    <% if (theme.search == true && page.type == 'search') { %>
+    data-search-path="<%= theme.search_path %>"
+    <% } %>
+    <% if (theme.scroll_reveal) { %>
+    data-scroll-reveal-disappear="<%= theme.scroll_reveal_disappear %>"
+    data-scroll-reveal-query="<%= theme.scroll_reveal_query %>"
+    <% } %>
+    data-nav-blur-gradient="<%= theme.nav_blur_gradient %>"
+    style="--config-corner-squircle: <%= theme.squircle %>"
+  >
+    <%- js('js/body-top.js') %>
+    <% if (theme.apod_background) { %>
+    <div class="akari-nasa-bg" aria-hidden="true"></div>
+    <script src="<%- asset('js/nasa-background.js') %>"></script>
+    <% } %>
+    <a href="#main-content" id="skip-to-content"><%- __('skip_to_content') %></a>
+    <%- partial('_partial/nav') %>
+    <main id="main-content"<% if (typeof page?.should_index === 'boolean' ? page.should_index : (is_post() || (is_page() && (page.type != 'search' && page.type != 'tags' && page.type != 'categories')))) { %> data-pagefind-body<% } %>>
+      <%- body %>
+    </main>
+    <%- partial('_partial/footer') %>
+
+    <%- js('js/main.js') %>
+    <script src="<%- asset('js/nav-lang.js') %>"></script>
+
+    <% if (theme.search == true && page.type == 'search') { %>
+    <%- js('js/search.js') %>
+    <% } %>
+
+    <% if (theme.scroll_reveal) { %>
+    <%- js('js/scroll-reveal.js') %>
+    <% } %>
+
+    <%- theme.insertions.body.ending %>
+  </body>
+</html>

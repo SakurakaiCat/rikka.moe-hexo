@@ -1,0 +1,27 @@
+<% const isHomepage = page.path == "index.html" || page.show_hero; %>
+<% const heroClip = theme.hero_clip && !page.show_locale_chooser; %>
+<div class="container">
+  <% if (isHomepage) { %>
+  <div class="hero<% if (heroClip) { %> media-hero<% } %><% if (theme.hero_exit_while_scrolling.enabled) { %> exit-while-scroll<% if (theme.hero_exit_while_scrolling.blur_filter) { %> with-blur<% } %><% } %>">
+    <% if (heroClip) { %>
+    <picture class="hero-media" aria-hidden="true">
+      <source media="(max-width: 699px)" srcset="<%- url_for('images/profile/hero-clip-mobile.webp') %>">
+      <source media="(max-width: 1199px)" srcset="<%- url_for('images/profile/hero-clip-tablet.webp') %>">
+      <img src="<%- url_for('images/profile/hero-clip-desktop.webp') %>" alt="" loading="eager" decoding="async" fetchpriority="high">
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <% } %>
+
+    <h2 class="title"><%- theme.hero.title %></h2>
+    <h2 class="description"><%- locale_hero_description() %></h2>
+  </div>
+  <% } %>
+
+  <% if (page.show_locale_chooser) { %>
+    <%- partial('_partial/locale-chooser') %>
+  <% } else { %>
+    <%- partial('_partial/home-sections') %>
+
+    <%- partial('_partial/personal-intro') %>
+  <% } %>
+</div>

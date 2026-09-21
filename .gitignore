@@ -1,0 +1,18 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+api/dist/
+
+# Local runtime data — SQLite DBs hold visitor PII (guestbook, analytics);
+# env files hold secrets. Never commit any of these.
+data/
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
