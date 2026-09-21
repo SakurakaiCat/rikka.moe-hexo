@@ -1,0 +1,16 @@
+<%
+  // Edition homepage: one card grid per category the edition publishes, with a
+  // link into that category's full listing. Mirrors the previous site's
+  // articles / thoughts / gallery / moments sections.
+%>
+<% (page.sections || []).forEach((section) => { %>
+<section class="home-section home-section--<%- section.key %>">
+  <header class="home-section__head">
+    <h2 class="home-section__title"><%- section.name %></h2>
+    <span class="home-section__count"><%- section.count %></span>
+    <a class="home-section__more" href="<%- url_for(section.url) %>"><%- __('all_posts') %> →</a>
+  </header>
+
+  <%- partial('_partial/post-list', { posts: section.posts, isNotIndex: false }) %>
+</section>
+<% }) %>

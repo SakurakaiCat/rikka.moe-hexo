@@ -1,0 +1,36 @@
+<% if (theme.nav_blur_gradient) { %>
+<div class="nav-mask">
+  <% for (let i = 1; i <= 6; i++) { %>
+  <div style="--sharp: <%- i %>"></div>
+  <%} %>
+</div>
+<% } %>
+<%
+  const navItems = locale_nav();
+  const languages = language_options();
+%>
+<nav id="theme-nav">
+  <div class="inner">
+    <a class="title" href="<%- url_for(`/${locale_of_page().key}/`) %>"><%= theme.nav.title %></a>
+    <div class="nav-arrow"></div>
+    <div class="nav-items">
+      <% navItems.forEach((item, i) => { %>
+      <a class="nav-item<% if (i === 0) { %> nav-item-home<% } %>" href="<%- url_for(item.url) %>" style="--index: <%- i %>"><%- item.name %></a>
+      <% }) %>
+
+      <details class="nav-lang">
+        <summary class="nav-item is-icon" style="--index: <%- navItems.length %>" title="<%= __('switch_language') %>" aria-label="<%= __('switch_language') %>">
+          <i class="bi bi-translate" aria-hidden="true"></i>
+        </summary>
+        <div class="nav-lang__menu">
+          <% languages.forEach((language) => { %>
+          <a class="nav-lang__item<% if (language.current) { %> is-current<% } %>"
+             href="<%- url_for(language.url) %>"
+             data-locale-preference="<%- language.key %>"
+             hreflang="<%- language.hreflang %>"<% if (language.current) { %> aria-current="true"<% } %>><%- language.display_name %></a>
+          <% }) %>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>

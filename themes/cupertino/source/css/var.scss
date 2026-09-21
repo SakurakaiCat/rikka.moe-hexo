@@ -1,0 +1,20 @@
+@use './var_partial.scss' as *;
+
+:root {
+  @include global;
+}
+
+body[data-color-scheme='auto'],
+body[data-color-scheme='light'] {
+  @include light-colors;
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-color-scheme='auto'] {
+    @include dark-colors;
+  }
+}
+
+body[data-color-scheme='dark'] {
+  @include dark-colors;
+}

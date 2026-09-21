@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="meta">
+    <h1 class="title"><%= __('categories') %></h1>
+  </div>
+  <div class="categories">
+    <% const entries = page.entries || site.categories.map((category) => ({ name: category.name, url: category.path, count: category.length })); %>
+    <% entries.forEach((entry) => { %>
+    <a href="<%- url_for(entry.url) %>" class="category"><%- entry.name %><% if (theme.categories_post_count) { %><span class="count"><%- entry.count %></span><% } %></a>
+    <% }) %>
+  </div>
+</div>

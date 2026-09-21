@@ -1,0 +1,41 @@
+<footer>
+  <div class="inner">
+    <div class="links">
+      <% for (const group of locale_footer()) { %>
+      <div class="group">
+        <h2 class="title"><%- group.title %></h2>
+        <% for (const item of group.items) { %>
+        <a href="<%- url_for(item.url) %>" class="item<% if (item.current) { %> current<% } %>"<% if (item.preference) { %> data-locale-preference="<%- item.preference %>"<% } %>><%- item.name %></a>
+        <% } %>
+      </div>
+      <% } %>
+    </div>
+    <span>&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br><%- __('powered_by', '<a href="http://hexo.io/" target="_blank">Hexo</a>') %></span>
+    <p class="visit-counter">
+      <span id="busuanzi_container_site_uv" style="display:none"><%= __('site_visitors') %><span id="busuanzi_value_site_uv"></span></span>
+      <span id="busuanzi_container_site_pv" style="display:none"><%= __('site_views') %><span id="busuanzi_value_site_pv"></span></span>
+    </p>
+    <script src="<%- asset('js/analytics.js') %>"></script>
+    <% if (theme.footer_extra_description) { %>
+    <br>
+    <span class="footer-extra-description"><%- theme.footer_extra_description %></span>
+    <% } %>
+    <% if (theme.show_color_scheme_toggle) { %>
+      <br>
+      <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+        <label>
+          <input type="radio" value="light">
+          <span><%- __('light') %></span>
+        </label>
+        <label>
+          <input type="radio" value="dark">
+          <span><%- __('dark') %></span>
+        </label>
+        <label>
+          <input type="radio" value="auto">
+          <span><%- __('auto') %></span>
+        </label>
+      </div>
+    <% }%>
+  </div>
+</footer>

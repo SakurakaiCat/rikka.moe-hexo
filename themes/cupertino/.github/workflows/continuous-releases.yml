@@ -1,0 +1,24 @@
+name: Continuous Releases
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - run: corepack enable
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Install corepack
+        run: npm install -g corepack
+      - name: Install package manager
+        run: corepack install
+
+      - name: Install dependencies
+        run: corepack pnpm install
+
+      - run: corepack pnpm dlx pkg-pr-new publish

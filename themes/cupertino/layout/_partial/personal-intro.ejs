@@ -1,0 +1,59 @@
+<% const intro = personal_intro(); %>
+<% if (intro) { %>
+<section class="akari-personal-intro" id="about-me">
+  <article>
+    <header class="akari-personal-intro__header">
+      <small><%= __('personal') %></small>
+      <h2><%= intro.title %></h2>
+      <p class="akari-personal-intro__memoir-note"><%= intro.memoir_note %></p>
+    </header>
+
+    <% if (intro.cards && intro.cards.length) { %>
+    <div class="akari-profile-cards">
+      <% intro.cards.forEach((card) => { %>
+      <div class="akari-profile-card">
+        <i class="bi <%= card.icon %>" aria-hidden="true"></i>
+        <div>
+          <small><%= card.label %></small>
+          <p><%= card.value %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <% } %>
+
+    <div class="akari-personal-intro__figure-row">
+      <figure class="akari-personal-intro__figure">
+        <img src="<%- url_for(intro.image) %>" alt="<%- intro.image_alt %>" loading="lazy" decoding="async">
+        <figcaption><%= intro.closing %></figcaption>
+      </figure>
+
+      <details class="akari-personal-intro__memoir">
+        <summary>
+          <span class="akari-personal-intro__memoir-toggle">
+            <span class="akari-personal-intro__memoir-open"><%= intro.toggle_open %></span>
+            <span class="akari-personal-intro__memoir-close"><%= intro.toggle_close %></span>
+          </span>
+          <i class="bi bi-caret-down-fill" aria-hidden="true"></i>
+        </summary>
+        <div class="akari-personal-intro__body">
+          <% intro.paragraphs.forEach((paragraph) => { %>
+          <p><%= paragraph %></p>
+          <% }) %>
+
+          <% if (intro.tags && intro.tags.length) { %>
+          <div class="akari-personal-intro__tags">
+            <h3><%= intro.tag_header %></h3>
+            <ul>
+              <% intro.tags.forEach((tag) => { %>
+              <li><%= tag %></li>
+              <% }) %>
+            </ul>
+          </div>
+          <% } %>
+        </div>
+      </details>
+    </div>
+  </article>
+</section>
+<% } %>
