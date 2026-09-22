@@ -65,66 +65,66 @@
   <%- css(getCdnUrl('bootstrap-icons', '1', 'font/bootstrap-icons.min.css')) %>
   <% } %>
 
-  <%- css('css/var') %>
-  <%- css('css/main') %>
-  <%- css('css/typography') %>
-  <%- css('css/code-highlighting') %>
+  <%- css_versioned('css/var') %>
+  <%- css_versioned('css/main') %>
+  <%- css_versioned('css/typography') %>
+  <%- css_versioned('css/code-highlighting') %>
 
   <% if (theme.builtin_components.card) { %>
-  <%- css('css/components/card') %>
+  <%- css_versioned('css/components/card') %>
   <% } %>
   <% if (theme.builtin_components.button) { %>
-  <%- css('css/components/button') %>
+  <%- css_versioned('css/components/button') %>
   <% } %>
   <% if (theme.builtin_components.badge) { %>
-  <%- css('css/components/badge') %>
+  <%- css_versioned('css/components/badge') %>
   <% } %>
   <% if (theme.builtin_components.utilities) { %>
-  <%- css('css/components/utilities') %>
+  <%- css_versioned('css/components/utilities') %>
   <% } %>
   <% if (theme.builtin_components.carousel) { %>
-  <%- css('css/components/carousel') %>
+  <%- css_versioned('css/components/carousel') %>
   <% } %>
   <% if (theme.builtin_components.callout) { %>
-  <script>ThemeCupertino['_calloutStyles'] = `<%- css('css/components/callout') %>`</script>
+  <script>ThemeCupertino['_calloutStyles'] = `<%- css_versioned('css/components/callout') %>`</script>
   <%- js('js/components/callout.js') %>
   <% } %>
 
-  <%- css('css/nav') %>
-  <%- css('css/paginator') %>
-  <%- css('css/footer') %>
-  <%- css('css/post-list') %>
+  <%- css_versioned('css/nav') %>
+  <%- css_versioned('css/paginator') %>
+  <%- css_versioned('css/footer') %>
+  <%- css_versioned('css/post-list') %>
   <% if (theme.rainbow_banner) { %>
-  <%- css('css/rainbow-banner') %>
+  <%- css_versioned('css/rainbow-banner') %>
   <% } %>
   <% if (theme.toc) { %>
-  <%- css('css/toc') %>
+  <%- css_versioned('css/toc') %>
   <% } %>
   <% if (is_homepage()) { %>
-  <%- css('css/index') %>
+  <%- css_versioned('css/index') %>
   <% } %>
   <% if (!is_homepage()) { %>
-  <%- css('css/post') %>
+  <%- css_versioned('css/post') %>
   <% } %>
   <% if (is_archive() || is_category() || is_tag()) { %>
-  <%- css('css/archive') %>
+  <%- css_versioned('css/archive') %>
   <% } %>
   <% if (theme.search == true && page.type == 'search') { %>
-  <%- css('pagefind/pagefind-ui.css') %>
+  <%- css_versioned('pagefind/pagefind-ui.css') %>
   <%- js('pagefind/pagefind-ui.js') %>
-  <%- css('css/search') %>
+  <%- css_versioned('css/search') %>
   <% } %>
   <% if (page.type == 'tags') { %>
-  <%- css('css/tags') %>
+  <%- css_versioned('css/tags') %>
   <% } %>
   <% if (page.type == 'categories') { %>
-  <%- css('css/categories') %>
+  <%- css_versioned('css/categories') %>
   <% } %>
   <% if (theme.scroll_reveal) { %>
-  <%- css('css/scroll-reveal') %>
+  <%- css_versioned('css/scroll-reveal') %>
   <% } %>
   <% if (theme.view_transition) { %>
-  <%- css('css/view-transition') %>
+  <%- css_versioned('css/view-transition') %>
   <% } %>
   <% if (theme.smooth_scroll) { %>
   <script src="<%- getCdnUrl('lenis', '1', 'dist/lenis.min.js') %>"></script>
@@ -132,8 +132,8 @@
   <%- js('js/smooth-scroll.js') %>
   <% } %>
 
-  <link rel="stylesheet" href="<%- asset('css/migrated.css') %>">
-  <link rel="stylesheet" href="<%- asset('css/guestbook.css') %>">
+  <%- css_versioned('css/migrated') %>
+  <%- css_versioned('css/guestbook') %>
   <%- js('js/head.js') %>
   <script>window.__AKARI_API_BASE__ = <%- api_base() %>;</script>
   <%- locale_routing() %>
