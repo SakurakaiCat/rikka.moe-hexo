@@ -29,6 +29,27 @@
   opacity: 0.75;
 }
 
+/* scripts/ai-summary.js renders the callout body as markdown, so its blocks
+   arrive wrapped in <p>/<ul>. Space them here instead of inside the blocks. */
+.ai-summary > p,
+.ai-summary > ul,
+.ai-summary > ol {
+  margin: 0.6em 0;
+}
+
+.ai-summary > ul,
+.ai-summary > ol {
+  padding-left: 1.4em;
+}
+
+.ai-summary > :first-child {
+  margin-top: 0;
+}
+
+.ai-summary > :last-child {
+  margin-bottom: 0;
+}
+
 /* Locale chooser page (/languages/) */
 .locale-chooser {
   margin: 1rem 0 3rem;
