@@ -63,9 +63,13 @@ const HOME_SECTIONS = [
 
 const FIRST_IMAGE = /<img[^>]+src="([^"]+)"/i;
 
-/** Give a card an image: explicit cover first, otherwise the post's first one. */
+/**
+ * Give a card an image: the post's first content image (the card's usual
+ * face), otherwise the hero cover resolved by the before_generate filter
+ * (see scripts/covers.js) — the same artwork the post page shows.
+ */
 function withCover(post) {
-  if (!post.cover_image && post.content) {
+  if (post.content) {
     const match = FIRST_IMAGE.exec(post.content);
     if (match) post.cover_image = match[1];
   }
