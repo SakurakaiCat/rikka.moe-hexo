@@ -9,6 +9,11 @@ lang: zh-tw
 translation_key: giffgaff-uk-sim-guide
 ---
 
+<div class="danger-banner">
+<span class="danger-banner__title">⚠️ 風險提醒</span>
+<p>若你人不在英國本土，請隨時做好你的帳號被封禁並且不會得到任何退款的情況。</p>
+</div>
+
 <div class="ai-summary">
 一篇圍繞 giffgaff 英國 SIM 卡的端到端實操指南，寫給在國內長期需要海外手機號、又不想付 Google Voice 那種價錢的人。核心結論是：**giffgaff Pay as you go 是目前最划算的境外保號方案**——免實名、零月租、收簡訊不花錢，保號一年只要約 5 元人民幣。
 

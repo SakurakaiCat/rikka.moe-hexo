@@ -583,3 +583,85 @@ body[data-color-scheme='dark'].akari-nasa-loaded .akari-nasa-bg {
     padding: 8px 0;
   }
 }
+
+/* Red risk banner at the very top of a post body (the giffgaff guide): a
+   solid red card that carries a warning, not a summary. Same column width as
+   the .ai-summary card below it, so the two line up. */
+
+.danger-banner {
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  max-width: 800px;
+  margin: 1.25rem auto 0;
+  padding: 0.9rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background-color: #d7382e;
+  color: #ffffff;
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+.danger-banner__title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.danger-banner p {
+  margin: 0;
+}
+
+.danger-banner a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Site-wide announcement bar pinned above the fixed nav (layout.ejs).
+   The nav and the page content shift down by the bar's height. */
+
+:root {
+  --site-notice-height: 34px;
+}
+
+.site-notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  height: var(--site-notice-height);
+  line-height: var(--site-notice-height);
+  margin: 0;
+  padding: 0 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  background-color: var(--color-background-secondary-translucent);
+  backdrop-filter: var(--filter-blur);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.site-notice a {
+  color: var(--color-text-accent);
+}
+
+nav {
+  top: var(--site-notice-height);
+}
+
+body {
+  margin-top: calc(56px + var(--site-notice-height));
+}
+
+#skip-to-content:focus {
+  transform: translateX(-50%) translateY(calc(-50% + 82px));
+}
+
+@media (max-width: 600px) {
+  .site-notice {
+    font-size: 12px;
+  }
+}

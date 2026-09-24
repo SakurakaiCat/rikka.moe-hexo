@@ -9,6 +9,11 @@ lang: en
 translation_key: giffgaff-uk-sim-guide
 ---
 
+<div class="danger-banner">
+<span class="danger-banner__title">⚠️ Warning</span>
+<p>If you are not physically in the UK, please always be prepared for the possibility that your account may be banned and that no refund of any kind will be issued.</p>
+</div>
+
 <div class="ai-summary">
 An end-to-end practical guide to giffgaff UK SIM cards, written for anyone who needs a long-term overseas phone number without paying Google Voice prices. The core takeaway: **giffgaff Pay as you go is currently the most cost-effective offshore number-keeping solution** — no ID required, zero monthly fees, free incoming texts, and keeping a number active costs roughly ¥5 (≈$0.70) per year.
 
