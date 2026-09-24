@@ -1,0 +1,76 @@
+/* Friends links grid (source/_data/links.yml → themes/cupertino/layout/friends.ejs). */
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 32px 0 48px;
+}
+
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-large);
+  background-color: var(--color-background-secondary);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.friend-card:hover,
+.friend-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--color-background-accent);
+  background-color: var(--color-background-secondary-hover, var(--color-background-secondary));
+}
+
+.friend-card__avatar {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-medium);
+  object-fit: cover;
+  background-color: var(--color-background-primary);
+}
+
+.friend-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.friend-card__name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.friend-card__descr {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.friend-card__url {
+  font-size: 12px;
+  color: var(--color-text-tertiary, var(--color-text-secondary));
+}
+
+.friend-card__icon {
+  margin-left: auto;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.friend-card:hover .friend-card__icon,
+.friend-card:focus-visible .friend-card__icon {
+  opacity: 1;
+}
