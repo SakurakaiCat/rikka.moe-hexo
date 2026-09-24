@@ -9,6 +9,11 @@ lang: ja
 translation_key: giffgaff-uk-sim-guide
 ---
 
+<div class="danger-banner">
+<span class="danger-banner__title">⚠️ 注意</span>
+<p>あなたが英国本土におられない場合、アカウントが封禁され、いかなる払い戻しも受けられない可能性があることに、いつでも備えておいてください。</p>
+</div>
+
 <div class="ai-summary">
 国内で長期的に海外電話番号が必要だが、Google Voice のような料金は払いたくない人向けの、giffgaff 英国 SIM カードの完全実践ガイド。核心的な結論：**giffgaff Pay as you go は現在最もコストパフォーマンスの高い海外番号維持ソリューション**——本人確認不要、月額ゼロ、受信 SMS 無料、番号維持に年間わずか約 5 元（約 110 円）。
 
