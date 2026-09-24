@@ -48,6 +48,7 @@ const FOOTER_ITEMS = [
   { key: 'topics', path: (lang) => `/${lang}/topics/` },
   { key: 'about', path: (lang) => `/${lang}/about/` },
   { key: 'guestbook', path: (lang) => `/${lang}/guestbook/` },
+  { key: 'links', path: (lang) => `/${lang}/links/` },
   { name: 'RSS', path: (lang) => `/${lang}/atom.xml` },
 ];
 

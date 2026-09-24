@@ -1,0 +1,10 @@
+# 友链列表 —— 在下方追加条目即可，四个语言版本的友链页共用这份数据。
+# 字段：name（站点名）、url、avatar（头像）、descr（一句话介绍，按语言分组，
+# zh 同时用于 zh-cn / zh-tw，缺少当前语言时回退 zh）。
+- name: Takina
+  url: https://takina.moe
+  avatar: https://takina.moe/icon-512.png
+  descr:
+    zh: 写代码、打游戏，偶尔记下生活。
+    en: Takina's personal blog — coding, gaming, and bits of life.
+    ja: コードとゲーム、ときどき日々のことを書く個人ブログ。

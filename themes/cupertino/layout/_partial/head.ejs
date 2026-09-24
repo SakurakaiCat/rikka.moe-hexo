@@ -134,6 +134,9 @@
 
   <%- css_versioned('css/migrated') %>
   <%- css_versioned('css/guestbook') %>
+  <% if (page.friends) { %>
+  <%- css_versioned('css/friends') %>
+  <% } %>
   <%- js('js/head.js') %>
   <script>window.__AKARI_API_BASE__ = <%- api_base() %>;</script>
   <%- locale_routing() %>

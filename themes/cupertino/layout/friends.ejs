@@ -1,0 +1,38 @@
+<%# Friends links page: renders the grid from source/_data/links.yml.
+    Shared by every edition (layout: friends in the page front matter). %>
+<article class="post friends-page">
+  <div class="meta">
+    <h1 class="title" data-pagefind-meta="title"><%= page.title %></h1>
+  </div>
+
+  <div class="content">
+    <%- page.content %>
+  </div>
+
+  <%
+    const links = site.data.links || [];
+    // zh-cn / zh-tw share the zh description; fall back to zh, then to a plain string.
+    const lang = locale_of_page().key;
+    function descrOf(link) {
+      if (!link.descr) return '';
+      if (typeof link.descr === 'string') return link.descr;
+      const group = lang.startsWith('zh') ? 'zh' : lang;
+      return String(link.descr[group] || link.descr.zh || '');
+    }
+  %>
+  <div class="friends-grid" data-pagefind-ignore>
+    <% links.forEach((link) => { %>
+    <a class="friend-card" href="<%= link.url %>" target="_blank" rel="noopener friend">
+      <img class="friend-card__avatar" src="<%= link.avatar %>" alt="" width="64" height="64" loading="lazy" decoding="async">
+      <span class="friend-card__body">
+        <span class="friend-card__name"><%= link.name %></span>
+        <% const descr = descrOf(link); if (descr) { %>
+        <span class="friend-card__descr"><%= descr %></span>
+        <% } %>
+        <span class="friend-card__url"><%= link.url.replace(/^https?:\/\//, '').replace(/\/$/, '') %></span>
+      </span>
+      <i class="bi bi-arrow-up-right friend-card__icon" aria-hidden="true"></i>
+    </a>
+    <% }) %>
+  </div>
+</article>
