@@ -14,3 +14,30 @@
   <%- partial('_partial/post-list', { posts: section.posts, isNotIndex: false }) %>
 </section>
 <% }) %>
+
+<%
+  // Friends links section: same header rhythm as the sections above, fed by
+  // source/_data/links.yml. Hidden entirely while the list is empty.
+  const friends = (site.data && site.data.links) || [];
+%>
+<% if (friends.length) { %>
+<section class="home-section home-friends">
+  <header class="home-section__head">
+    <h2 class="home-section__title"><%- __('links') %></h2>
+    <span class="home-section__count"><%- friends.length %></span>
+    <a class="home-section__more" href="<%- url_for(`/${locale_of_page().key}/links/`) %>"><%- __('all_friends') %> →</a>
+  </header>
+
+  <div class="home-friends__row">
+    <% friends.forEach((friend) => { %>
+    <a class="friend-chip" href="<%= friend.url %>" target="_blank" rel="noopener friend">
+      <img class="friend-chip__avatar" src="<%= friend.avatar %>" alt="" width="40" height="40" loading="lazy" decoding="async">
+      <span class="friend-chip__body">
+        <span class="friend-chip__name"><%= friend.name %></span>
+        <span class="friend-chip__url"><%= friend.url.replace(/^https?:\/\//, '').replace(/\/$/, '') %></span>
+      </span>
+    </a>
+    <% }) %>
+  </div>
+</section>
+<% } %>

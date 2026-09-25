@@ -87,3 +87,69 @@
 .friend-card:focus-visible .friend-card__icon {
   opacity: 1;
 }
+
+/* Homepage friends section (layout/_partial/home-sections.ejs): pill-shaped
+   friend chips under the same section header the post categories use. */
+
+.home-friends__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.friend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px 6px 7px;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-full);
+  background-color: var(--color-background-secondary);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.friend-chip:hover,
+.friend-chip:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--color-background-accent);
+}
+
+.friend-chip__avatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  background-color: var(--color-background-primary);
+}
+
+.friend-chip__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  max-width: 180px;
+}
+
+.friend-chip__name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.friend-chip__url {
+  font-size: 12px;
+  color: var(--color-text-tertiary, var(--color-text-secondary));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
