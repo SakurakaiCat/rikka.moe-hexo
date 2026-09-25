@@ -269,3 +269,19 @@ hexo.extend.helper.register('locale_routing', function () {
     `<script src="${this.asset('js/akari-locale-routing.js')}"></script>`,
   ].join('\n');
 });
+
+/**
+ * One-line description of a friend link (source/_data/links.yml), localized.
+ * `descr` may be a plain string (all editions) or a per-language map; the
+ * zh-cn/zh-tw editions share the `zh` entry and fall back to it, then to a
+ * plain string entry named zh.
+ */
+hexo.extend.helper.register('friend_descr', function (link) {
+  if (!link || !link.descr) return '';
+
+  if (typeof link.descr === 'string') return link.descr;
+
+  const lang = pageLang(this);
+  const group = lang.startsWith('zh') ? 'zh' : lang;
+  return String(link.descr[group] || link.descr.zh || '');
+});

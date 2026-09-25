@@ -134,7 +134,7 @@
   flex-direction: column;
   gap: 1px;
   min-width: 0;
-  max-width: 180px;
+  max-width: 200px;
 }
 
 .friend-chip__name {
@@ -146,10 +146,13 @@
   text-overflow: ellipsis;
 }
 
-.friend-chip__url {
+.friend-chip__descr {
   font-size: 12px;
+  line-height: 1.4;
   color: var(--color-text-tertiary, var(--color-text-secondary));
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
-  text-overflow: ellipsis;
 }

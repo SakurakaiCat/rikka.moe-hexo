@@ -11,14 +11,6 @@
 
   <%
     const links = site.data.links || [];
-    // zh-cn / zh-tw share the zh description; fall back to zh, then to a plain string.
-    const lang = locale_of_page().key;
-    function descrOf(link) {
-      if (!link.descr) return '';
-      if (typeof link.descr === 'string') return link.descr;
-      const group = lang.startsWith('zh') ? 'zh' : lang;
-      return String(link.descr[group] || link.descr.zh || '');
-    }
   %>
   <div class="friends-grid" data-pagefind-ignore>
     <% links.forEach((link) => { %>
@@ -26,7 +18,7 @@
       <img class="friend-card__avatar" src="<%= link.avatar %>" alt="" width="64" height="64" loading="lazy" decoding="async">
       <span class="friend-card__body">
         <span class="friend-card__name"><%= link.name %></span>
-        <% const descr = descrOf(link); if (descr) { %>
+        <% const descr = friend_descr(link); if (descr) { %>
         <span class="friend-card__descr"><%= descr %></span>
         <% } %>
         <span class="friend-card__url"><%= link.url.replace(/^https?:\/\//, '').replace(/\/$/, '') %></span>
