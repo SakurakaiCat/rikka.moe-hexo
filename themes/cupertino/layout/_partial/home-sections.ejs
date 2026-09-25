@@ -34,7 +34,7 @@
       <img class="friend-chip__avatar" src="<%= friend.avatar %>" alt="" width="40" height="40" loading="lazy" decoding="async">
       <span class="friend-chip__body">
         <span class="friend-chip__name"><%= friend.name %></span>
-        <span class="friend-chip__url"><%= friend.url.replace(/^https?:\/\//, '').replace(/\/$/, '') %></span>
+        <span class="friend-chip__descr"><%= friend_descr(friend) %></span>
       </span>
     </a>
     <% }) %>
