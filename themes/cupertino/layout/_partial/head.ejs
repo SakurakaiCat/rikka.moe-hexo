@@ -134,7 +134,7 @@
 
   <%- css_versioned('css/migrated') %>
   <%- css_versioned('css/guestbook') %>
-  <% if (page.friends) { %>
+  <% if (page.friends || page.sections) { %>
   <%- css_versioned('css/friends') %>
   <% } %>
   <%- js('js/head.js') %>
