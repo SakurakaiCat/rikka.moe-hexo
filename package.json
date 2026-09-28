@@ -23,6 +23,6 @@
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^7.0.0",
     "hexo-server": "^3.0.0",
-    "sass": "^1.104.1"
+    "sass": "^1.105.0"
   }
 }
