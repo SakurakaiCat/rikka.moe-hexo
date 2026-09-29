@@ -16,7 +16,7 @@
   "dependencies": {
     "better-sqlite3": "^13.0.3",
     "esbuild": "^0.28.2",
-    "feedsmith": "^3.0.0",
+    "feedsmith": "^3.0.1",
     "hexo": "^8.0.0",
     "hexo-autoprefixer": "^2.0.0",
     "hexo-pagination": "^4.0.0",
