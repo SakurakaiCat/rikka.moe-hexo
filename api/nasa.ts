@@ -1,11 +1,22 @@
 import type { D1DatabaseLike } from './lib/analytics';
 
-const NASA_APOD_ENDPOINT = 'https://api.nasa.gov/planetary/apod';
-const WINDOW_DAYS = 30;
+// api.nasa.gov's APOD endpoint answers every key and every query shape
+// (single date, start/end window, count) with a "NASA Science" logo
+// placeholder since the science.nasa.gov migration — explanations still
+// resolve, titles and image URLs do not — and DEMO_KEY is capped at 10
+// req/h besides. The background pool therefore comes from the key-free NASA
+// Image Library API, whose asset CDN also backs the new
+// science.nasa.gov/apod/ hub. If that endpoint ever heals, the old pool
+// logic (starry preference, day-deterministic pick, stale fallback) still
+// applies unchanged.
+const IMAGE_API_ENDPOINT = 'https://images-api.nasa.gov/search';
+const IMAGE_QUERIES = ['nebula', 'galaxy', 'milky way', 'star cluster'];
+const PAGE_SIZE = 30;
+const MAX_CANDIDATES = 40;
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
-const FETCH_TIMEOUT_MS = 8000;
-// Titles/explanations matching these terms read as a night sky; other imagery
-// (planetary close-ups, eclipses, hardware) is deprioritised for the background.
+const FETCH_TIMEOUT_MS = 10_000;
+// Titles matching these terms read as a night sky; other imagery (planetary
+// close-ups, eclipses, hardware) is deprioritised for the background.
 const STARRY_KEYWORDS = [
   'galax',
   'nebul',
@@ -35,14 +46,17 @@ interface NasaApodCache {
   expires_at: number;
 }
 
-interface NasaApodApiResponse {
-  media_type?: string;
-  url?: string;
-  thumbnail_url?: string;
-  title?: string;
-  copyright?: string;
-  date?: string;
-  explanation?: string;
+interface ImageApiItem {
+  data?: Array<{ nasa_id?: string; title?: string; date_created?: string }>;
+  links?: Array<{ href?: string }>;
+}
+
+interface ImageApiSearchResponse {
+  collection?: { items?: ImageApiItem[] };
+}
+
+interface ImageApiAssetResponse {
+  collection?: { items?: Array<{ href?: string }> };
 }
 
 const isStarry = (candidate: NasaApodCandidate) => {
@@ -59,41 +73,88 @@ const jsonResponse = (body: unknown, cacheControl: string) =>
     },
   });
 
-const fetchApodWindow = async (apiKey: string): Promise<NasaApodCandidate[]> => {
-  const toDay = (offsetDays: number) =>
-    new Date(Date.now() - offsetDays * 86_400_000).toISOString().slice(0, 10);
-  const endpoint =
-    `${NASA_APOD_ENDPOINT}?api_key=${encodeURIComponent(apiKey)}` +
-    `&start_date=${toDay(WINDOW_DAYS)}&end_date=${toDay(0)}&thumbs=true`;
-
-  const response = await fetch(endpoint, {
+const fetchJson = async (url: string): Promise<unknown> => {
+  const response = await fetch(url, {
     signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     headers: { accept: 'application/json' },
   });
-  if (!response.ok) throw new Error(`NASA APOD responded ${response.status}`);
+  if (!response.ok) throw new Error(`${new URL(url).pathname} responded ${response.status}`);
+  return response.json();
+};
 
-  const payload = (await response.json()) as NasaApodApiResponse[];
-  if (!Array.isArray(payload)) throw new Error('NASA APOD payload was not a list');
+/** Manifest hrefs are http:// and asset sizes vary per item (~large is often
+ * absent), so upgrade the scheme and take the best background-sized
+ * rendition the item actually has. */
+const resolveRenditions = async (
+  nasaId: string,
+): Promise<{ url: string; thumbnailUrl: string | null } | null> => {
+  const payload = (await fetchJson(
+    `https://images-api.nasa.gov/asset/${encodeURIComponent(nasaId)}`,
+  )) as ImageApiAssetResponse;
+  const hrefs = (payload.collection?.items ?? [])
+    .map((item) => (item.href ?? '').replace(/^http:\/\//, 'https://'))
+    .filter((href) => href.startsWith('https://images-assets.nasa.gov/'));
+  const pick = (size: string) => hrefs.find((href) => href.includes(`~${size}.jpg`));
+  const url = pick('large') ?? pick('medium') ?? pick('small') ?? pick('thumb');
+  if (!url) return null;
+  return { url, thumbnailUrl: pick('thumb') ?? pick('small') };
+};
+
+const fetchApodWindow = async (): Promise<NasaApodCandidate[]> => {
+  const searches = await Promise.all(
+    IMAGE_QUERIES.map(async (query) => {
+      try {
+        const endpoint =
+          `${IMAGE_API_ENDPOINT}?q=${encodeURIComponent(query)}` +
+          `&media_type=image&page_size=${PAGE_SIZE}`;
+        const payload = (await fetchJson(endpoint)) as ImageApiSearchResponse;
+        return payload.collection?.items ?? [];
+      } catch {
+        return []; // one failed query should not kill the whole refresh
+      }
+    }),
+  );
+
+  const seen = new Set<string>();
+  const items: ImageApiItem[] = [];
+  for (const entry of searches.flat()) {
+    const id = entry.data?.[0]?.nasa_id;
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
+    items.push(entry);
+    if (items.length >= MAX_CANDIDATES) break;
+  }
 
   const candidates: NasaApodCandidate[] = [];
-  for (const entry of payload) {
-    if (entry.media_type !== 'image' || !entry.url || !entry.date) continue;
-    candidates.push({
-      url: entry.url,
-      thumbnailUrl: entry.thumbnail_url ?? null,
-      title: entry.title ?? null,
-      copyright: entry.copyright ?? null,
-      date: entry.date,
-    });
+  const batch = 10;
+  for (let i = 0; i < items.length; i += batch) {
+    await Promise.all(
+      items.slice(i, i + batch).map(async (entry) => {
+        const data = entry.data?.[0];
+        const id = data?.nasa_id;
+        if (!id) return;
+        const renditions = await resolveRenditions(id).catch(() => null);
+        if (!renditions) return;
+        if (renditions.url.includes('nasa-logo')) return;
+        const fallbackThumb = entry.links?.[0]?.href?.replace(/^http:\/\//, 'https://') ?? null;
+        candidates.push({
+          url: renditions.url,
+          thumbnailUrl: renditions.thumbnailUrl ?? fallbackThumb,
+          title: data?.title ?? null,
+          copyright: null,
+          date: (data?.date_created ?? '').slice(0, 10),
+        });
+      }),
+    );
   }
-  if (candidates.length === 0) throw new Error('NASA APOD window contained no images');
+  if (candidates.length === 0) throw new Error('NASA image library returned no usable images');
   return candidates;
 };
 
 /**
  * Rotates the background across the starry-sky candidates deterministically by
  * UTC day, so every visitor sees the same picture on a given day and the pool
- * refreshes as the APOD window slides.
+ * refreshes as the underlying search results evolve.
  */
 const pickCandidate = (candidates: NasaApodCandidate[]): NasaApodCandidate => {
   const starry = candidates.filter((candidate) => isStarry(candidate));
@@ -102,14 +163,7 @@ const pickCandidate = (candidates: NasaApodCandidate[]): NasaApodCandidate => {
   return pool[dayNumber % pool.length];
 };
 
-export const handleNasaApod = async (
-  db: D1DatabaseLike,
-  apiKey: string | undefined,
-): Promise<Response> => {
-  if (!apiKey) {
-    return jsonResponse({ ok: false, error: 'not_configured' }, 'no-store');
-  }
-
+export const handleNasaApod = async (db: D1DatabaseLike): Promise<Response> => {
   try {
     const cache = await db.prepare('SELECT * FROM nasa_apod WHERE id = 1').first<NasaApodCache>();
     if (cache && cache.expires_at > Date.now()) {
@@ -119,7 +173,7 @@ export const handleNasaApod = async (
       );
     }
 
-    const candidates = await fetchApodWindow(apiKey);
+    const candidates = await fetchApodWindow();
     const now = Date.now();
     if (cache) {
       await db
@@ -136,8 +190,12 @@ export const handleNasaApod = async (
       { ok: true, candidate: pickCandidate(candidates) },
       'public, max-age=1800',
     );
-  } catch {
-    // Upstream failed or rate-limited: keep serving the last known pool.
+  } catch (error) {
+    // Upstream failed: keep serving the last known pool.
+    console.warn(
+      '[rikka-api] nasa-apod refresh failed:',
+      error instanceof Error ? error.message : error,
+    );
     try {
       const cache = await db.prepare('SELECT * FROM nasa_apod WHERE id = 1').first<NasaApodCache>();
       if (cache) {

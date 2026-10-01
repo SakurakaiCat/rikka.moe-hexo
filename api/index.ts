@@ -61,7 +61,7 @@ const ROUTES: Route[] = [
   { method: 'POST', pattern: /^\/api\/books\/verify\/?$/, handler: (request, env) => handleBooksVerifyPost(request, env) },
   { method: 'OPTIONS', pattern: /^\/api\/books\/verify\/?$/, handler: () => handleBooksVerifyOptions() },
   { method: 'GET', pattern: /^\/api\/books\/download\/([^/]+)\/?$/, handler: (request, env, index) => handleBooksDownloadGet(request, env, index ?? '0') },
-  { method: 'GET', pattern: /^\/api\/nasa-apod\/?$/, handler: (request, env) => handleNasaApod(env.DB, env.NASA_API_KEY) },
+  { method: 'GET', pattern: /^\/api\/nasa-apod\/?$/, handler: (request, env) => handleNasaApod(env.DB) },
 ];
 
 // CORS: the preview site is served from a different origin than this API, so
