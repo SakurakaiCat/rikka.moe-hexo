@@ -13,7 +13,7 @@ zh-cn:
   cards:
   - icon: bi-mortarboard
     label: 身份
-    value: 19 岁 · 大一在读
+    value: 19 岁 · {{grade_status}}
   - icon: bi-geo-alt
     label: 坐标
     value: 广西柳州人 · 南宁长大 · 东北上学
@@ -33,7 +33,7 @@ zh-cn:
   - 最希望得到的东西：快乐和自由
   - 性格：社恐、内向、比较忧郁和焦虑，在意别人的看法、敏感，总是想当「老好人」
   paragraphs:
-  - 哦嗨哟，我是香澄，来自广西柳州，现在东北上学，普通的大一学生。
+  - 哦嗨哟，我是香澄，来自广西柳州，现在东北上学，普通的{{grade}}学生。
   - 我来自广西柳州，初中后搬至南宁上学。
   - 小学时期，因为一系列家庭和学校的因素，给我留下不少的创伤，好几年过去了，我还记得，举个例子，被推到卫生间里欺负，东西被丢进里面等。导致我连小学数学都学不明白，一度被拉去检测智商（我至今记得好像是在一家医院里，其中一个环节是对着一个电脑屏幕，好像是做什么类似消消乐点图找不同的东西），当然后面还是过了，可能白花钱了。
   - 我的性格大抵就是在这时开始成型，那时的我就比较独处了。我还记得有一次，我在学校闯祸了，当时我不敢回家，不然要被打，被老师发现的话就被抓起来留校挨骂，当时我就在学校里找了一个地方，类似会议室的地方，躲在桌底，什么都没吃在那里躲了几个小时，最后没法才出来。
@@ -59,7 +59,7 @@ zh-tw:
   cards:
   - icon: bi-mortarboard
     label: 身份
-    value: 19 歲 · 大一在讀
+    value: 19 歲 · {{grade_status}}
   - icon: bi-geo-alt
     label: 座標
     value: 廣西柳州人 · 南寧長大 · 東北上學
@@ -79,7 +79,7 @@ zh-tw:
   - 最希望得到的東西：快樂和自由
   - 性格：社恐、內向、比較憂鬱和焦慮，在意別人的看法、敏感，總是想當「老好人」
   paragraphs:
-  - 哦嗨喲，我是香澄，來自廣西柳州，現在東北上學，普通的大一學生。
+  - 哦嗨喲，我是香澄，來自廣西柳州，現在東北上學，普通的{{grade}}學生。
   - 我來自廣西柳州，初中後搬至南寧上學。
   - 小學時期，因為一系列家庭和學校的因素，給我留下不少的創傷，好幾年過去了，我還記得，舉個例子，被推到衛生間裡欺負，東西被丟進裡面等。導致我連小學數學都學不明白，一度被拉去檢測智商（我至今記得好像是在一家醫院裡，其中一個環節是對著一個電腦螢幕，好像是做什麼類似消消樂點圖找不同的東西），當然後面還是過了，可能白花錢了。
   - 我的性格大抵就是在這時開始成型，那時的我就比較獨處了。我還記得有一次，我在學校闖禍了，當時我不敢回家，不然要被打，被老師發現的話就被抓起來留校挨罵，當時我就在學校裡找了一個地方，類似會議室的地方，躲在桌底，什麼都沒吃在那裡躲了幾個小時，最後沒法才出來。
@@ -105,7 +105,7 @@ en:
   cards:
   - icon: bi-mortarboard
     label: Who
-    value: 19 · college freshman
+    value: 19 · {{grade_status}}
   - icon: bi-geo-alt
     label: Where
     value: Liuzhou, Guangxi · raised in Nanning · studying in NE China
@@ -125,7 +125,7 @@ en:
   - 'What I want most: happiness and freedom'
   - 'Personality: socially anxious, introverted, somewhat melancholic and anxious, sensitive and concerned about what others think, always trying to be the "nice one"'
   paragraphs:
-  - Good morning — I am Kasumi, from Liuzhou, Guangxi. Right now I am a freshman studying in the northeast. Just an ordinary university student.
+  - Good morning — I am Kasumi, from Liuzhou, Guangxi. Right now I am a {{grade}} studying in the northeast. Just an ordinary university student.
   - I am originally from Liuzhou, Guangxi, and moved to Nanning for middle school.
   - During primary school, a combination of family and school factors left me with quite a bit of trauma. Years later I still remember things like being pushed into the bathroom and bullied, my belongings thrown in there. It got so bad that I could not even understand elementary-school math, and I was once taken for an IQ test (I still vaguely remember sitting in front of a computer screen in what I think was a hospital, doing something like a matching-and-spotting-the-difference game). I passed in the end — probably a waste of money.
   - My personality was largely shaped during those years. I already preferred being alone. I remember one time I got in trouble at school and was too scared to go home because I would be beaten, and if a teacher found me I would be kept behind and scolded. So I hid under a table in what I think was a meeting room, ate nothing for hours, and only came out when I had no other choice.
@@ -151,7 +151,7 @@ ja:
   cards:
   - icon: bi-mortarboard
     label: 身份
-    value: 19歳 · 大学一年生
+    value: 19歳 · {{grade_status}}
   - icon: bi-geo-alt
     label: 場所
     value: 広西柳州出身 · 南寧育ち · 東北で就学
@@ -171,7 +171,7 @@ ja:
   - 一番欲しいもの：幸せと自由
   - 性格：社交不安、内向的、やや憂鬱で焦虑しやすい、他人の目を気にして敏感、「いい人」を演じてしまう
   paragraphs:
-  - おはようございます、香澄です。広西チワン族自治区柳州出身で、今は東北の大学に通う普通の一年生です。
+  - おはようございます、香澄です。広西チワン族自治区柳州出身で、今は東北の大学に通う普通の{{grade}}です。
   - 出身は柳州で、中学から南寧に引っ越しました。
   - 小学校の頃、家庭と学校のさまざまな要因で大きなトラウマを負いました。何年経った今でも覚えているのですが、たとえばトイレに押し込まれていじめられたり、荷物を捨てられたりしました。おかげで小学校の算数すらまともに理解できず、一度知能検査を受けさせられたことがあります（病院のパソコン画面で、マッチングゲームのようなものをやらされた記憶があります）。結局合格しましたが、たぶん無駄遣いでした。
   - 私の性格はたぶんこの頃から形成され始めました。その頃から一人でいることを好んでいました。ある日学校でトラブルを起こして、家に帰ったら殴られるのが怖くて、先生に見つかったら留め置きされて叱られるのが怖くて、学校の中の会議室のような場所を見つけ、机の下に隠れて何時間も何も食べずに過ごしました。とうとう仕方なく出てきました。

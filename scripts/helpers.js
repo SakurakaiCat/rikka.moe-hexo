@@ -10,6 +10,7 @@
 
 const { LOCALES, DEFAULT_LOCALE, localeOfPage, localeKeyOf, routingConfig } = require('./lib/locales');
 const taxonomy = require('./lib/taxonomy');
+const { gradeTokens, applyGradeTokens } = require('./lib/grade');
 
 const crypto = require('node:crypto');
 const fs = require('node:fs');
@@ -129,7 +130,12 @@ hexo.extend.helper.register('personal_intro', function () {
   const data = this.site && this.site.data ? this.site.data.intro : null;
   if (!data) return null;
 
-  return data[pageLang(this)] || data[DEFAULT_LOCALE] || null;
+  const lang = pageLang(this);
+  const intro = data[lang] || data[DEFAULT_LOCALE] || null;
+
+  // {{grade}} / {{grade_status}} resolve to the auto-computed school grade
+  // (enrolled 2025; see scripts/lib/grade.js) at build time.
+  return intro ? applyGradeTokens(intro, gradeTokens(lang)) : null;
 });
 
 hexo.extend.helper.register('locale_html_lang', function () {
